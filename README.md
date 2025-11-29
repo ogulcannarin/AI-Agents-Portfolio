@@ -1,167 +1,167 @@
-# 🤖 AI Agents Portfolio
+# 🤖 Yapay Zeka Ajanları Portföyü
 
-Welcome to my AI Agents Portfolio! This repository showcases practical implementations of intelligent agents using cutting-edge frameworks like **LangChain**, **LangGraph**, and **Multi-Agent Systems**.
+Yapay Zeka Ajanları Portföyüme hoş geldiniz! Bu repo, **LangChain**, **LangGraph** ve **Multi-Agent Sistemler** gibi en güncel framework'ler kullanılarak geliştirilmiş akıllı ajanların pratik uygulamalarını sergiliyor.
 
-## 📋 Table of Contents
+## 📋 İçindekiler
 
-- [Overview](#overview)
-- [Projects](#projects)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
+- [Genel Bakış](#genel-bakış)
+- [Projeler](#projeler)
+- [Kullanılan Teknolojiler](#kullanılan-teknolojiler)
+- [Başlangıç](#başlangıç)
+- [Proje Yapısı](#proje-yapısı)
+- [Katkıda Bulunma](#katkıda-bulunma)
+- [Lisans](#lisans)
 
-## 🎯 Overview
+## 🎯 Genel Bakış
 
-This portfolio demonstrates my expertise in building intelligent, autonomous AI agents that can reason, plan, and execute tasks. Each project showcases different aspects of agentic AI systems, from simple ReAct patterns to complex multi-agent orchestrations.
+Bu portföy, düşünebilen, planlayabilen ve görevleri yürütebilen akıllı ve otonom yapay zeka ajanları oluşturma konusundaki uzmanlığımı göstermektedir. Her proje, basit ReAct kalıplarından karmaşık çok ajanlı orkestrasyonlara kadar ajansal yapay zeka sistemlerinin farklı yönlerini sergiliyor.
 
-## 🚀 Projects
+## 🚀 Projeler
 
-### 1. LangChain ReAct Agent
-A sophisticated agent built with LangChain's ReAct (Reasoning + Acting) pattern. This agent can:
-- Reason about problems step-by-step
-- Use external tools to gather information
-- Make decisions based on observations
-- Execute actions autonomously
+### 1. LangChain ReAct Ajanı
+LangChain'in ReAct (Akıl Yürütme + Eylem) kalıbıyla oluşturulmuş sofistike bir ajan. Bu ajan:
+- Problemler hakkında adım adım akıl yürütebilir
+- Bilgi toplamak için harici araçları kullanabilir
+- Gözlemlere dayalı kararlar alabilir
+- Otonom olarak eylemler gerçekleştirebilir
 
-**Key Features:**
-- Tool integration (web search, calculations, etc.)
-- Step-by-step reasoning transparency
-- Error handling and recovery
+**Temel Özellikler:**
+- Araç entegrasyonu (web araması, hesaplamalar vb.)
+- Adım adım akıl yürütme şeffaflığı
+- Hata işleme ve kurtarma
 
-### 2. LangGraph Memory Agent
-An advanced agent leveraging LangGraph for stateful conversations with persistent memory. This agent:
-- Maintains context across multiple interactions
-- Uses graph-based workflow management
-- Implements complex decision trees
-- Provides consistent, context-aware responses
+### 2. LangGraph Hafıza Ajanı
+Kalıcı hafıza ile durum bilgisi içeren konuşmalar için LangGraph kullanan gelişmiş bir ajan. Bu ajan:
+- Birden fazla etkileşim boyunca bağlamı korur
+- Graf tabanlı iş akışı yönetimi kullanır
+- Karmaşık karar ağaçları uygular
+- Tutarlı, bağlama duyarlı yanıtlar sağlar
 
-**Key Features:**
-- Persistent memory across sessions
-- Graph-based state management
-- Multi-turn conversation handling
-- Dynamic workflow adaptation
+**Temel Özellikler:**
+- Oturumlar arası kalıcı hafıza
+- Graf tabanlı durum yönetimi
+- Çok turlu konuşma işleme
+- Dinamik iş akışı adaptasyonu
 
-### 3. Multi-Agent System
-A collaborative system where multiple specialized agents work together to solve complex problems. Features:
-- **Orchestrator Agent**: Coordinates tasks between specialized agents
-- **Research Agent**: Gathers and analyzes information
-- **Planning Agent**: Creates structured plans and strategies
-- **Execution Agent**: Implements solutions based on plans
+### 3. Çoklu Ajan Sistemi
+Karmaşık problemleri çözmek için birlikte çalışan birden fazla uzmanlaşmış ajanın olduğu işbirlikçi bir sistem. Özellikler:
+- **Orkestratör Ajan**: Uzmanlaşmış ajanlar arasında görevleri koordine eder
+- **Araştırma Ajanı**: Bilgi toplar ve analiz eder
+- **Planlama Ajanı**: Yapılandırılmış planlar ve stratejiler oluşturur
+- **Yürütme Ajanı**: Planlara dayalı çözümleri uygular
 
-**Key Features:**
-- Agent-to-agent communication
-- Task decomposition and delegation
-- Collaborative problem-solving
-- Web interface for real-time interaction
+**Temel Özellikler:**
+- Ajanlar arası iletişim
+- Görev ayrıştırma ve delegasyonu
+- İşbirlikçi problem çözme
+- Gerçek zamanlı etkileşim için web arayüzü
 
-## 🛠️ Technologies Used
+## 🛠️ Kullanılan Teknolojiler
 
-- **Python 3.8+**: Core programming language
-- **LangChain**: Framework for building LLM applications
-- **LangGraph**: State management for agentic workflows
-- **Groq API**: Fast LLM inference
-- **Tavily API**: Web search capabilities
-- **Flask**: Web framework for the multi-agent system
-- **HTML/CSS/JavaScript**: Frontend interfaces
+- **Python 3.8+**: Temel programlama dili
+- **LangChain**: LLM uygulamaları oluşturmak için framework
+- **LangGraph**: Ajansal iş akışları için durum yönetimi
+- **Groq API**: Hızlı LLM çıkarımı
+- **Tavily API**: Web arama yetenekleri
+- **Flask**: Çoklu ajan sistemi için web framework'ü
+- **HTML/CSS/JavaScript**: Frontend arayüzleri
 
-## 🎬 Getting Started
+## 🎬 Başlangıç
 
-### Prerequisites
+### Gereksinimler
 
-- Python 3.8 or higher
-- API Keys:
-  - [Groq API Key](https://console.groq.com/)
-  - [Tavily API Key](https://tavily.com/)
+- Python 3.8 veya üzeri
+- API Anahtarları:
+  - [Groq API Anahtarı](https://console.groq.com/)
+  - [Tavily API Anahtarı](https://tavily.com/)
 
-### Installation
+### Kurulum
 
-1. **Clone the repository**
+1. **Repository'yi klonlayın**
    ```bash
    git clone https://github.com/ogulcannarin/AI-Agents-Portfolio.git
    cd AI-Agents-Portfolio
    ```
 
-2. **Install dependencies**
+2. **Bağımlılıkları yükleyin**
    
-   Each project has its own dependencies. Navigate to the specific project folder and install:
+   Her projenin kendi bağımlılıkları vardır. İlgili proje klasörüne gidin ve yükleyin:
    
    ```bash
-   # For any project
-   cd 1-LangChain-ReAct-Agent  # or 2-LangGraph-Memory-Agent or 3-Multi-Agent-System
+   # Herhangi bir proje için
+   cd 1-LangChain-ReAct-Agent  # veya 2-LangGraph-Memory-Agent veya 3-Multi-Agent-System
    pip install -r requirements.txt
    ```
 
-3. **Set up environment variables**
+3. **Ortam değişkenlerini ayarlayın**
    
-   Create a `.env` file in each project directory:
+   Her proje dizininde bir `.env` dosyası oluşturun:
    
    ```env
-   GROQ_API_KEY=your_groq_api_key_here
-   TAVILY_API_KEY=your_tavily_api_key_here
+   GROQ_API_KEY=buraya_groq_api_anahtarınız
+   TAVILY_API_KEY=buraya_tavily_api_anahtarınız
    ```
 
-4. **Run the project**
+4. **Projeyi çalıştırın**
    
    ```bash
-   # For Python-based agents
+   # Python tabanlı ajanlar için
    python main.py
    
-   # For the Multi-Agent System with web interface
+   # Web arayüzlü Çoklu Ajan Sistemi için
    cd 3-Multi-Agent-System
    python main.py
-   # Then open http://localhost:5000 in your browser
+   # Ardından tarayıcınızda http://localhost:5000 adresini açın
    ```
 
-## 📁 Project Structure
+## 📁 Proje Yapısı
 
 ```
 AI-Agents-Portfolio/
 │
 ├── 1-LangChain-ReAct-Agent/
-│   ├── main.py              # Main agent implementation
-│   ├── requirements.txt     # Python dependencies
-│   └── README.md           # Project-specific documentation
+│   ├── main.py              # Ana ajan implementasyonu
+│   ├── requirements.txt     # Python bağımlılıkları
+│   └── README.md           # Projeye özel dokümantasyon
 │
 ├── 2-LangGraph-Memory-Agent/
-│   ├── main.py              # Memory-enabled agent
-│   ├── requirements.txt     # Python dependencies
-│   └── README.md           # Project-specific documentation
+│   ├── main.py              # Hafıza özellikli ajan
+│   ├── requirements.txt     # Python bağımlılıkları
+│   └── README.md           # Projeye özel dokümantasyon
 │
 ├── 3-Multi-Agent-System/
-│   ├── main.py              # Flask backend with multi-agent orchestration
-│   ├── index.html           # Web interface
-│   ├── requirements.txt     # Python dependencies
-│   └── README.md           # Project-specific documentation
+│   ├── main.py              # Çoklu ajan orkestrasyonu ile Flask backend
+│   ├── index.html           # Web arayüzü
+│   ├── requirements.txt     # Python bağımlılıkları
+│   └── README.md           # Projeye özel dokümantasyon
 │
-├── .gitignore              # Git ignore rules
-└── README.md               # This file
+├── .gitignore              # Git ignore kuralları
+└── README.md               # Bu dosya
 ```
 
-## 💡 Use Cases
+## 💡 Kullanım Senaryoları
 
-- **Automated Research**: Agents that can search, analyze, and summarize information
-- **Task Planning**: AI systems that break down complex tasks into actionable steps
-- **Decision Making**: Intelligent agents that reason through problems
-- **Collaborative AI**: Multiple agents working together on complex problems
+- **Otomatik Araştırma**: Bilgi arayabilen, analiz edebilen ve özetleyebilen ajanlar
+- **Görev Planlama**: Karmaşık görevleri eyleme dönüştürülebilir adımlara ayıran yapay zeka sistemleri
+- **Karar Verme**: Problemler üzerinde akıl yürüten akıllı ajanlar
+- **İşbirlikçi Yapay Zeka**: Karmaşık problemler üzerinde birlikte çalışan birden fazla ajan
 
-## 🤝 Contributing
+## 🤝 Katkıda Bulunma
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/ogulcannarin/AI-Agents-Portfolio/issues).
+Katkılar, sorunlar ve özellik istekleri memnuniyetle karşılanır! [Issues sayfasını](https://github.com/ogulcannarin/AI-Agents-Portfolio/issues) kontrol etmekten çekinmeyin.
 
-## 📝 License
+## 📝 Lisans
 
-This project is [MIT](LICENSE) licensed.
+Bu proje [MIT](LICENSE) lisansı altındadır.
 
-## 📧 Contact
+## 📧 İletişim
 
 **Oğulcan Narin**
 - GitHub: [@ogulcannarin](https://github.com/ogulcannarin)
-- LinkedIn: [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)
+- LinkedIn: [LinkedIn Profiliniz](https://linkedin.com/in/yourprofile)
 
 ---
 
-⭐ If you find this repository helpful, please consider giving it a star!
+⭐ Bu repository'yi yararlı buluyorsanız, lütfen yıldız vermeyi düşünün!
 
-**Built with ❤️ using LangChain, LangGraph, and cutting-edge AI technologies**
+**LangChain, LangGraph ve en güncel yapay zeka teknolojileri ile ❤️ ile geliştirildi**
