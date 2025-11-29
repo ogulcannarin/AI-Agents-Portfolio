@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic AI - Hafızalı Asistan</title>
+    <style>
+        /* --- MODERN TASARIM --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eef1f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .chat-container {
+            width: 500px;
+            height: 700px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .session-info {
+            font-size: 10px;
+            opacity: 0.7;
+            font-weight: normal;
+        }
+
+        .chat-box {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 12px 18px;
+            border-radius: 15px;
+            font-size: 15px;
+            line-height: 1.5;
+            position: relative;
+            word-wrap: break-word;
+        }
+
+        .bot-message {
+            background: #f0f2f7;
+            color: #333;
+            align-self: flex-start;
+            border-bottom-left-radius: 2px;
+        }
+
+        .user-message {
+            background: #2a5298;
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 2px;
+            box-shadow: 0 3px 10px rgba(42, 82, 152, 0.3);
+        }
+
+        .typing {
+            font-style: italic;
+            color: #888;
+            font-size: 13px;
+            margin-left: 20px;
+            margin-bottom: 10px;
+            display: none;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .input-area {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #eee;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        input {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #eee;
+            border-radius: 30px;
+            outline: none;
+            font-size: 15px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #2a5298;
+        }
+
+        button {
+            background: #2a5298;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s, background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button:hover {
+            background: #1e3c72;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="header">
+            <div>🧠 Hafızalı Asistan</div>
+            <div class="session-info" id="sessionIdDisplay">ID: ...</div>
+        </div>
+        
+        <div class="chat-box" id="chatBox">
+            <div class="message bot-message">
+                Merhaba! Ben hafızası olan bir yapay zekayım. Bana ismini söylersen bir daha unutmam! 😉
+            </div>
+        </div>
+
+        <div class="typing" id="typingIndicator">
+            <span>⚡ Düşünüyor...</span>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="userInput" placeholder="Bir şeyler yaz..." onkeypress="handleEnter(event)">
+            <button onclick="mesajGonder()">➤</button>
+        </div>
+    </div>
+
+    <script>
+        // --- 1. OTURUM YÖNETİMİ (Session ID) ---
+        // Tarayıcı hafızasından (LocalStorage) ID'yi çek. Yoksa yeni oluştur.
+        let sessionId = localStorage.getItem("chat_session_id");
+        if (!sessionId) {
+            sessionId = "user_" + Math.random().toString(36).substring(7);
+            localStorage.setItem("chat_session_id", sessionId);
+        }
+        
+        // ID'yi ekranda göster (Havalı dursun diye)
+        document.getElementById("sessionIdDisplay").innerText = "ID: " + sessionId;
+
+        // --- 2. MESAJ GÖNDERME ---
+        async function mesajGonder() {
+            const inputField = document.getElementById("userInput");
+            const chatBox = document.getElementById("chatBox");
+            const typingIndicator = document.getElementById("typingIndicator");
+            
+            const soru = inputField.value.trim();
+            if (!soru) return;
+
+            addMessage(soru, 'user-message');
+            inputField.value = "";
+            typingIndicator.style.display = "flex";
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            try {
+                // API'ye Session ID ile birlikte istek atıyoruz
+                const response = await fetch("http://127.0.0.1:8000/chat", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ 
+                        soru: soru,
+                        dosya_adi: "ornek_cv.pdf",
+                        session_id: sessionId // <--- İŞTE HAFIZA ANAHTARI
+                    })
+                });
+
+                if (!response.ok) throw new Error("API Hatası");
+
+                const data = await response.json();
+                
+                const cevapMetni = `${data.cevap} <br><br> <small style="color:#666; font-size:11px">🔍 Kaynak: ${data.kaynak}</small>`;
+                addMessage(cevapMetni, 'bot-message');
+
+            } catch (error) {
+                addMessage("❌ Hata: Sunucu kapalı olabilir. Terminali kontrol et.", 'bot-message', true);
+            } finally {
+                typingIndicator.style.display = "none";
+            }
+        }
+
+        function addMessage(text, className, isError = false) {
+            const chatBox = document.getElementById("chatBox");
+            const div = document.createElement("div");
+            div.className = `message ${className}`;
+            div.innerHTML = text;
+            if (isError) div.style.color = "red";
+            chatBox.appendChild(div);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function handleEnter(e) { if (e.key === "Enter") mesajGonder(); }
+    </script>
+
+</body>
+</html>
