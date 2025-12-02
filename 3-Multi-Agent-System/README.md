@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🤖 Multi-Agent Code Factory
+# 🤖 Çok Ajanlı Kod Fabrikası
 
-### *AI-Powered Collaborative Code Generation System*
+### *Yapay Zeka Destekli İşbirlikçi Kod Üretim Sistemi*
 
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/downloads/)
 [![LangGraph](https://img.shields.io/badge/LangGraph-Latest-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://langchain-ai.github.io/langgraph/)
@@ -10,59 +10,59 @@
 [![Google AI](https://img.shields.io/badge/Google_AI-Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-**A sophisticated multi-agent system where AI developers and testers collaborate to generate, review, and iteratively perfect Python code.**
+**Yapay zeka geliştiricilerin ve test uzmanlarının Python kodu üretmek, incelemek ve iteratif olarak mükemmelleştirmek için işbirliği yaptığı sofistike bir çok ajanlı sistem.**
 
-[🚀 Quick Start](#-quick-start) •
-[📖 Documentation](#-architecture) •
-[✨ Features](#-key-features) •
-[🎯 Examples](#-usage-examples) •
-[🤝 Contributing](#-contributing)
+[🚀 Hızlı Başlangıç](#-hızlı-başlangıç) •
+[📖 Dokümantasyon](#-mimari) •
+[✨ Özellikler](#-temel-özellikler) •
+[🎯 Örnekler](#-kullanım-örnekleri) •
+[🤝 Katkıda Bulunma](#-katkıda-bulunma)
 
 </div>
 
 ---
 
-## 🌟 Overview
+## 🌟 Genel Bakış
 
-Welcome to the **Multi-Agent Code Factory** - a cutting-edge demonstration of collaborative AI agents working in harmony. This project showcases how specialized AI agents can coordinate through LangGraph to produce high-quality, production-ready Python code.
+**Çok Ajanlı Kod Fabrikası**'na hoş geldiniz - uyum içinde çalışan işbirlikçi yapay zeka ajanlarının son teknoloji bir gösterimi. Bu proje, özelleşmiş yapay zeka ajanlarının LangGraph aracılığıyla nasıl koordine olarak yüksek kaliteli, üretime hazır Python kodu üretebileceğini sergiliyor.
 
-### 🎭 Meet the Agents
+### 🎭 Ajanlarla Tanışın
 
-| Agent | Role | Responsibility |
-|-------|------|----------------|
-| 👨‍💻 **Developer Agent** | Code Generator | Creates Python code based on requirements, implements features, and refines based on feedback |
-| 🧪 **Tester Agent** | Quality Assurance | Reviews code for bugs, edge cases, performance issues, and best practices |
-| 🔄 **System Orchestrator** | Coordinator | Manages workflow, tracks iterations, and ensures convergence to quality code |
+| Ajan | Rol | Sorumluluk |
+|------|-----|------------|
+| 👨‍💻 **Geliştirici Ajan** | Kod Üretici | Gereksinimlere göre Python kodu oluşturur, özellikler ekler ve geri bildirimlere göre iyileştirme yapar |
+| 🧪 **Test Uzmanı Ajan** | Kalite Güvencesi | Kodu hatalara, uç durumlara, performans sorunlarına karşı inceler ve en iyi uygulamaları doğrular |
+| 🔄 **Sistem Koordinatörü** | Organizatör | İş akışını yönetir, iterasyonları takip eder ve kaliteli koda yakınsama sağlar |
 
-### 💡 Why This Matters
+### 💡 Neden Önemli?
 
-- **Real-World AI Collaboration**: Demonstrates practical multi-agent patterns used in production systems
-- **LangGraph Mastery**: Shows advanced state management and agent coordination
-- **Code Quality Automation**: Automates the entire code review and refinement process
-- **Educational Value**: Perfect for learning multi-agent architectures and AI workflows
+- **Gerçek Dünya Yapay Zeka İşbirliği**: Üretim sistemlerinde kullanılan pratik çok ajanlı kalıpları gösterir
+- **LangGraph Ustalığı**: Gelişmiş durum yönetimi ve ajan koordinasyonunu sergiler
+- **Kod Kalitesi Otomasyonu**: Tüm kod inceleme ve iyileştirme sürecini otomatikleştirir
+- **Eğitim Değeri**: Çok ajanlı mimarileri ve yapay zeka iş akışlarını öğrenmek için mükemmel
 
 ---
 
-## ✨ Key Features
+## ✨ Temel Özellikler
 
 <table>
 <tr>
 <td width="50%">
 
-### 🔁 Iterative Refinement
-- Automatic code review cycles
-- Up to 3 iterations for perfection
-- Context-aware improvements
-- Quality convergence tracking
+### 🔁 İteratif İyileştirme
+- Otomatik kod inceleme döngüleri
+- Mükemmellik için 3'e kadar iterasyon
+- Bağlam farkındalıklı iyileştirmeler
+- Kalite yakınsama takibi
 
 </td>
 <td width="50%">
 
-### 🎨 Modern Web UI
-- Beautiful gradient design
-- Real-time loading indicators
-- Syntax-highlighted code display
-- Responsive layout
+### 🎨 Modern Web Arayüzü
+- Güzel gradient tasarım
+- Gerçek zamanlı yükleme göstergeleri
+- Sözdizimi vurgulamalı kod görünümü
+- Duyarlı (responsive) düzen
 
 </td>
 </tr>
@@ -70,19 +70,19 @@ Welcome to the **Multi-Agent Code Factory** - a cutting-edge demonstration of co
 <td width="50%">
 
 ### 🚀 FastAPI Backend
-- RESTful API endpoints
-- Async/await support
-- CORS enabled
-- Health monitoring
+- RESTful API endpoint'leri
+- Async/await desteği
+- CORS aktivasyonu
+- Sağlık izleme
 
 </td>
 <td width="50%">
 
-### 🧠 Intelligent Agents
-- Powered by Google Gemini 1.5
-- Context-aware responses
-- Specialized system prompts
-- Continuous learning loop
+### 🧠 Akıllı Ajanlar
+- Google Gemini 1.5 ile çalışır
+- Bağlam farkındalıklı yanıtlar
+- Özelleştirilmiş sistem promptları
+- Sürekli öğrenme döngüsü
 
 </td>
 </tr>
@@ -90,20 +90,20 @@ Welcome to the **Multi-Agent Code Factory** - a cutting-edge demonstration of co
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ Mimari
 
-### System Flow Diagram
+### Sistem Akış Diyagramı
 
 ```mermaid
 graph TD
-    A[👤 User Request] -->|Task Description| B[👨‍💻 Developer Agent]
-    B -->|Generates Code| C[📝 Code Output]
-    C -->|Submit for Review| D[🧪 Tester Agent]
-    D -->|Analysis| E{Quality Check}
-    E -->|✅ APPROVED| F[✨ Final Code]
-    E -->|❌ REJECTED| G[📋 Feedback]
-    G -->|Improvements Needed| B
-    F -->|Return| H[😊 Happy User]
+    A[👤 Kullanıcı Talebi] -->|Görev Açıklaması| B[👨‍💻 Geliştirici Ajan]
+    B -->|Kod Üretir| C[📝 Kod Çıktısı]
+    C -->|İnceleme İçin Gönder| D[🧪 Test Uzmanı Ajan]
+    D -->|Analiz| E{Kalite Kontrolü}
+    E -->|✅ ONAYLANDI| F[✨ Son Kod]
+    E -->|❌ REDDEDİLDİ| G[📋 Geri Bildirim]
+    G -->|İyileştirme Gerekli| B
+    F -->|Dönüş| H[😊 Mutlu Kullanıcı]
     
     style A fill:#e1f5ff
     style B fill:#fff3e0
@@ -112,61 +112,61 @@ graph TD
     style H fill:#fff9c4
 ```
 
-### Agent Communication Flow
+### Ajan İletişim Akışı
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    LangGraph State                      │
+│                   LangGraph Durumu                      │
 │  ┌───────────┐  ┌───────────┐  ┌────────────┐         │
-│  │   Task    │  │   Code    │  │  Feedback  │         │
-│  │  Context  │  │  History  │  │   Loop     │         │
+│  │   Görev   │  │    Kod    │  │Geri Bildirim│        │
+│  │  Bağlamı  │  │  Geçmişi  │  │   Döngüsü   │        │
 │  └───────────┘  └───────────┘  └────────────┘         │
 └─────────────────────────────────────────────────────────┘
          ↓                ↓                ↓
-    Developer  ←──────→  State  ←──────→  Tester
-      Agent            Manager            Agent
+   Geliştirici  ←──────→  Durum  ←──────→  Test
+      Ajan              Yöneticisi         Uzmanı
 ```
 
-### Technology Stack
+### Teknoloji Yığını
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│                    Frontend Layer                    │
+│                   Frontend Katmanı                   │
 │         HTML5 + CSS3 + Vanilla JavaScript           │
 └─────────────────────────────────────────────────────┘
                          ↓
 ┌─────────────────────────────────────────────────────┐
-│                   API Layer (REST)                   │
+│                  API Katmanı (REST)                  │
 │              FastAPI + Uvicorn ASGI                 │
 └─────────────────────────────────────────────────────┘
                          ↓
 ┌─────────────────────────────────────────────────────┐
-│              Agent Orchestration Layer               │
+│             Ajan Orkestrasyon Katmanı                │
 │       LangGraph + LangChain Core + Gemini AI        │
 └─────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Hızlı Başlangıç
 
-### Prerequisites
+### Ön Gereksinimler
 
-- **Python**: 3.9 or higher ([Download](https://www.python.org/downloads/))
-- **Google AI API Key**: Get your free key from [Google AI Studio](https://makersuite.google.com/app/apikey)
-- **Git**: For cloning the repository
-- **Modern Browser**: Chrome, Firefox, Safari, or Edge
+- **Python**: 3.9 veya üzeri ([İndir](https://www.python.org/downloads/))
+- **Google AI API Anahtarı**: [Google AI Studio](https://makersuite.google.com/app/apikey)'dan ücretsiz anahtarınızı alın
+- **Git**: Depoyu klonlamak için
+- **Modern Tarayıcı**: Chrome, Firefox, Safari veya Edge
 
-### Installation
+### Kurulum
 
-#### 1️⃣ Clone the Repository
+#### 1️⃣ Depoyu Klonlayın
 
 ```bash
 git clone https://github.com/ogulcannarin/AI-Agents-Portfolio.git
 cd AI-Agents-Portfolio/3-Multi-Agent-System
 ```
 
-#### 2️⃣ Set Up Virtual Environment
+#### 2️⃣ Sanal Ortam Oluşturun
 
 **Windows:**
 ```powershell
@@ -180,83 +180,83 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-#### 3️⃣ Install Dependencies
+#### 3️⃣ Bağımlılıkları Yükleyin
 
 ```bash
 pip install -r requirements.txt
 ```
 
-#### 4️⃣ Configure Environment Variables
+#### 4️⃣ Ortam Değişkenlerini Yapılandırın
 
-Create a `.env` file in the project root:
+Proje kök dizininde `.env` dosyası oluşturun:
 
 ```env
-GOOGLE_API_KEY=your_actual_google_ai_api_key_here
+GOOGLE_API_KEY=gerçek_google_ai_api_anahtarınız_buraya
 ```
 
-> **🔐 Security Note**: Never commit your `.env` file to version control!
+> **🔐 Güvenlik Notu**: `.env` dosyanızı asla sürüm kontrolüne yüklemeyin!
 
-### Running the Application
+### Uygulamayı Çalıştırma
 
-#### Option 1: Standard Setup
+#### Seçenek 1: Standart Kurulum
 
 ```bash
-# Terminal 1 - Start FastAPI Backend
+# Terminal 1 - FastAPI Backend'i Başlat
 uvicorn main:app --reload --port 8000
 
-# Terminal 2 - Start Frontend Server
+# Terminal 2 - Frontend Sunucusunu Başlat
 python -m http.server 8080
 ```
 
-Then open: `http://localhost:8080`
+Ardından açın: `http://localhost:8080`
 
-#### Option 2: Docker Deployment
+#### Seçenek 2: Docker Deployment
 
 ```bash
-# Build the image
+# Image'ı oluştur
 docker build -t multi-agent-factory .
 
-# Run the container
+# Container'ı çalıştır
 docker run -p 8000:8000 --env-file .env multi-agent-factory
 ```
 
-Then open `index.html` in your browser.
+Ardından tarayıcınızda `index.html` dosyasını açın.
 
 ---
 
-## 📡 API Documentation
+## 📡 API Dokümantasyonu
 
-### Endpoints
+### Endpoint'ler
 
 #### `POST /generate-code`
 
-Generate and iteratively improve Python code based on task description.
+Görev açıklamasına göre Python kodu üretir ve iteratif olarak iyileştirir.
 
-**Request Body:**
+**İstek Gövdesi:**
 ```json
 {
-  "gorev": "Create a function to calculate the Fibonacci sequence up to n terms"
+  "gorev": "Fibonacci serisini n terime kadar hesaplayan bir fonksiyon oluştur"
 }
 ```
 
-**Response:**
+**Yanıt:**
 ```json
 {
-  "kod": "def fibonacci(n):\n    \"\"\"Generate Fibonacci sequence up to n terms.\"\"\"\n    if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    \n    fib = [0, 1]\n    for i in range(2, n):\n        fib.append(fib[i-1] + fib[i-2])\n    return fib\n\n# Example usage\nprint(fibonacci(10))  # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]",
+  "kod": "def fibonacci(n):\n    \"\"\"N terime kadar Fibonacci serisi üret.\"\"\"\n    if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    \n    fib = [0, 1]\n    for i in range(2, n):\n        fib.append(fib[i-1] + fib[i-2])\n    return fib\n\n# Kullanım örneği\nprint(fibonacci(10))  # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]",
   "durum": "ONAY",
   "tur_sayisi": 2
 }
 ```
 
-**Status Codes:**
-- `200 OK`: Code generated successfully
-- `500 Internal Server Error`: Generation failed
+**Durum Kodları:**
+- `200 OK`: Kod başarıyla üretildi
+- `500 Internal Server Error`: Üretim başarısız oldu
 
 #### `GET /`
 
-System status and welcome message.
+Sistem durumu ve karşılama mesajı.
 
-**Response:**
+**Yanıt:**
 ```json
 {
   "message": "Multi-Agent Kod Fabrikası API",
@@ -270,9 +270,9 @@ System status and welcome message.
 
 #### `GET /health`
 
-Health check endpoint for monitoring.
+İzleme için sağlık kontrolü endpoint'i.
 
-**Response:**
+**Yanıt:**
 ```json
 {
   "status": "healthy",
@@ -282,28 +282,28 @@ Health check endpoint for monitoring.
 
 ---
 
-## 🎯 Usage Examples
+## 🎯 Kullanım Örnekleri
 
-### Example 1: Data Processing Function
+### Örnek 1: Veri İşleme Fonksiyonu
 
-**Request:**
+**İstek:**
 ```json
 {
-  "gorev": "Write a function to remove duplicates from a list while preserving order"
+  "gorev": "Sırayı koruyarak bir listeden tekrar eden elemanları kaldıran bir fonksiyon yaz"
 }
 ```
 
-**Generated Code:**
+**Üretilen Kod:**
 ```python
 def remove_duplicates(lst):
     """
-    Remove duplicates from a list while preserving the original order.
+    Orijinal sırayı koruyarak listeden tekrar eden elemanları kaldır.
     
     Args:
-        lst: Input list with potential duplicates
+        lst: Tekrarlı elemanlar içerebilen giriş listesi
         
     Returns:
-        List with duplicates removed, order preserved
+        Tekrarlar kaldırılmış, sıra korunmuş liste
     """
     seen = set()
     result = []
@@ -315,171 +315,171 @@ def remove_duplicates(lst):
     
     return result
 
-# Example usage
-numbers = [1, 2, 2, 3, 4, 3, 5]
-print(remove_duplicates(numbers))  # [1, 2, 3, 4, 5]
+# Kullanım örneği
+sayilar = [1, 2, 2, 3, 4, 3, 5]
+print(remove_duplicates(sayilar))  # [1, 2, 3, 4, 5]
 ```
 
-### Example 2: String Manipulation
+### Örnek 2: String Manipülasyonu
 
-**Request:**
+**İstek:**
 ```json
 {
-  "gorev": "Create a function to check if a string is a palindrome"
+  "gorev": "Bir string'in palindrom olup olmadığını kontrol eden bir fonksiyon oluştur"
 }
 ```
 
-**Generated Code:**
+**Üretilen Kod:**
 ```python
 def is_palindrome(text):
     """
-    Check if a string is a palindrome (reads same forwards and backwards).
+    Bir string'in palindrom olup olmadığını kontrol et (ters ve düz aynı okunur).
     
     Args:
-        text: String to check
+        text: Kontrol edilecek string
         
     Returns:
-        True if palindrome, False otherwise
+        Palindrom ise True, değilse False
     """
-    # Remove spaces and convert to lowercase for comparison
+    # Karşılaştırma için boşlukları kaldır ve küçük harfe dönüştür
     cleaned = ''.join(text.lower().split())
     
-    # Compare with reversed string
+    # Ters çevrilmiş string ile karşılaştır
     return cleaned == cleaned[::-1]
 
-# Example usage
-print(is_palindrome("A man a plan a canal Panama"))  # True
-print(is_palindrome("hello"))  # False
+# Kullanım örneği
+print(is_palindrome("Ey edip Adana'da pide ye"))  # True
+print(is_palindrome("merhaba"))  # False
 ```
 
 ---
 
-## 📁 Project Structure
+## 📁 Proje Yapısı
 
 ```
 3-Multi-Agent-System/
 │
-├── 📄 main.py                 # FastAPI application & REST endpoints
-├── 📄 app.py                  # Multi-agent system core logic
-├── 📄 index.html              # Web user interface
-├── 📄 requirements.txt        # Python dependencies
-├── 📄 Dockerfile             # Container configuration
-├── 📄 .env                   # Environment variables (not in repo)
-├── 📄 .gitignore            # Git ignore rules
-└── 📄 README.md             # This file
+├── 📄 main.py                 # FastAPI uygulaması & REST endpoint'leri
+├── 📄 app.py                  # Çok ajanlı sistem temel mantığı
+├── 📄 index.html              # Web kullanıcı arayüzü
+├── 📄 requirements.txt        # Python bağımlılıkları
+├── 📄 Dockerfile             # Container yapılandırması
+├── 📄 .env                   # Ortam değişkenleri (depoda yok)
+├── 📄 .gitignore            # Git ignore kuralları
+└── 📄 README.md             # Bu dosya
 ```
 
-### Core Files Explained
+### Temel Dosyalar Açıklaması
 
-| File | Purpose | Key Components |
-|------|---------|----------------|
-| `main.py` | FastAPI backend server | CORS, routes, request handling |
-| `app.py` | Agent orchestration | LangGraph workflow, agent definitions |
-| `index.html` | User interface | Frontend logic, API calls, UI rendering |
-| `requirements.txt` | Dependencies | LangChain, LangGraph, FastAPI, etc. |
+| Dosya | Amaç | Ana Bileşenler |
+|------|------|---------------|
+| `main.py` | FastAPI backend sunucusu | CORS, route'lar, istek yönetimi |
+| `app.py` | Ajan orkestrasyonu | LangGraph iş akışı, ajan tanımları |
+| `index.html` | Kullanıcı arayüzü | Frontend mantığı, API çağrıları, UI render |
+| `requirements.txt` | Bağımlılıklar | LangChain, LangGraph, FastAPI, vb. |
 
 ---
 
-## 🔧 Configuration
+## 🔧 Yapılandırma
 
-### Environment Variables
+### Ortam Değişkenleri
 
-| Variable | Description | Required | Default |
-|----------|-------------|----------|---------|
-| `GOOGLE_API_KEY` | Google AI API key for Gemini | ✅ Yes | None |
-| `PORT` | Server port | ❌ No | 8000 |
+| Değişken | Açıklama | Gerekli | Varsayılan |
+|----------|----------|---------|-----------|
+| `GOOGLE_API_KEY` | Gemini için Google AI API anahtarı | ✅ Evet | Yok |
+| `PORT` | Sunucu portu | ❌ Hayır | 8000 |
 
-### Agent Configuration
+### Ajan Yapılandırması
 
-Modify agent behavior by editing prompts in `app.py`:
+`app.py` dosyasındaki promptları düzenleyerek ajan davranışını değiştirin:
 
 ```python
-# Developer Agent Prompt
+# Geliştirici Ajan Promptu
 DEVELOPER_PROMPT = """
-You are an expert Python developer...
+Sen uzman bir Python geliştiricisisin...
 """
 
-# Tester Agent Prompt
+# Test Uzmanı Ajan Promptu
 TESTER_PROMPT = """
-You are a meticulous code reviewer...
+Sen titiz bir kod inceleme uzmanısın...
 """
 ```
 
 ---
 
-## 🎨 User Interface
+## 🎨 Kullanıcı Arayüzü
 
-### Features
+### Özellikler
 
-- **🎭 Gradient Background**: Modern, eye-catching design
-- **📝 Task Input**: Large textarea for detailed requirements
-- **⚡ Real-time Feedback**: Loading animations during generation
-- **💻 Code Display**: Syntax-highlighted output with proper formatting
-- **📊 Iteration Counter**: Track review cycles
-- **✅ Status Indicator**: Visual feedback on approval/rejection
+- **🎭 Gradient Arka Plan**: Modern, göz alıcı tasarım
+- **📝 Görev Girişi**: Detaylı gereksinimler için geniş metin alanı
+- **⚡ Gerçek Zamanlı Geri Bildirim**: Üretim sırasında yükleme animasyonları
+- **💻 Kod Görüntüleme**: Düzgün biçimlendirilmiş sözdizimi vurgulamalı çıktı
+- **📊 İterasyon Sayacı**: İnceleme döngülerini takip et
+- **✅ Durum Göstergesi**: Onay/red üzerine görsel geri bildirim
 
-### Screenshots
+### Ekran Görüntüleri
 
-The interface includes:
-- Clean, minimalist design
-- Responsive layout (works on mobile, tablet, desktop)
-- Smooth animations and transitions
-- Professional color scheme
+Arayüz şunları içerir:
+- Temiz, minimalist tasarım
+- Duyarlı düzen (mobil, tablet, masaüstü'nde çalışır)
+- Yumuşak animasyonlar ve geçişler
+- Profesyonel renk şeması
 
 ---
 
-## 🧪 How It Works
+## 🧪 Nasıl Çalışır?
 
-### The Multi-Agent Loop
+### Çok Ajanlı Döngü
 
-1. **📥 Input Phase**: User submits a coding task
-2. **👨‍💻 Generation Phase**: Developer Agent creates initial code
-3. **🔍 Review Phase**: Tester Agent analyzes the code
-4. **🔄 Iteration Phase**: 
-   - If approved ✅: Return final code
-   - If rejected ❌: Developer refines based on feedback
-5. **🎯 Convergence**: Maximum 3 iterations to ensure quality
+1. **📥 Giriş Aşaması**: Kullanıcı bir kodlama görevi gönderir
+2. **👨‍💻 Üretim Aşaması**: Geliştirici Ajan ilk kodu oluşturur
+3. **🔍 İnceleme Aşaması**: Test Uzmanı Ajan kodu analiz eder
+4. **🔄 İterasyon Aşaması**: 
+   - Onaylandı ise ✅: Son kodu döndür
+   - Reddedildi ise ❌: Geliştirici geri bildirimlere göre iyileştirir
+5. **🎯 Yakınsama**: Kaliteyi sağlamak için maksimum 3 iterasyon
 
-### LangGraph State Management
+### LangGraph Durum Yönetimi
 
-The system uses typed state to maintain context:
+Sistem bağlamı korumak için tiplendirilmiş durum kullanır:
 
 ```python
 class AgentState(TypedDict):
-    task: str              # Original user request
-    code: str             # Current code version
-    feedback: str         # Tester's feedback
-    status: str           # ONAY or RET
-    iteration: int        # Current iteration count
+    task: str              # Orijinal kullanıcı isteği
+    code: str             # Güncel kod versiyonu
+    feedback: str         # Test uzmanının geri bildirimi
+    status: str           # ONAY veya RET
+    iteration: int        # Güncel iterasyon sayısı
 ```
 
-### Agent Decision Making
+### Ajan Karar Verme
 
-**Developer Agent**:
-- Analyzes task requirements
-- Generates clean, documented code
-- Incorporates tester feedback
-- Implements best practices
+**Geliştirici Ajan**:
+- Görev gereksinimlerini analiz eder
+- Temiz, dokümante edilmiş kod üretir
+- Test uzmanı geri bildirimlerini dahil eder
+- En iyi uygulamaları uygular
 
-**Tester Agent**:
-- Checks for syntax errors
-- Validates edge cases
-- Ensures proper documentation
-- Verifies performance considerations
+**Test Uzmanı Ajan**:
+- Sözdizimi hatalarını kontrol eder
+- Uç durumları doğrular
+- Düzgün dokümantasyonu sağlar
+- Performans hususlarını değerlendirir
 
 ---
 
 ## 🚢 Deployment
 
-### Production Deployment
+### Üretim Deployment'ı
 
-#### Using Docker
+#### Docker Kullanımı
 
 ```bash
-# Build for production
+# Üretim için build et
 docker build -t multi-agent-factory:prod .
 
-# Run with production settings
+# Üretim ayarlarıyla çalıştır
 docker run -d \
   -p 80:8000 \
   --env-file .env.production \
@@ -487,203 +487,202 @@ docker run -d \
   multi-agent-factory:prod
 ```
 
-#### Using Gunicorn
+#### Gunicorn Kullanımı
 
 ```bash
-# Install Gunicorn
+# Gunicorn'u yükle
 pip install gunicorn
 
-# Run with workers
+# Worker'larla çalıştır
 gunicorn main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000
 ```
 
-### Cloud Platforms
+### Bulut Platformları
 
-- **Google Cloud Run**: Deploy as serverless container
-- **AWS Lambda**: Use with Mangum adapter
-- **Heroku**: Use Procfile with Uvicorn
-- **Railway**: Direct deployment from GitHub
+- **Google Cloud Run**: Serverless container olarak deploy et
+- **AWS Lambda**: Mangum adaptörü ile kullan
+- **Heroku**: Uvicorn ile Procfile kullan
+- **Railway**: GitHub'dan direkt deployment
 
 ---
 
-## 📊 Performance
+## 📊 Performans
 
-### Benchmarks
+### Ölçümler
 
-| Metric | Value |
+| Metrik | Değer |
 |--------|-------|
-| Average Response Time | 3-8 seconds |
-| Typical Iterations | 1-2 cycles |
-| Success Rate | ~95% |
-| Max Concurrent Users | 100+ (with proper hosting) |
+| Ortalama Yanıt Süresi | 3-8 saniye |
+| Tipik İterasyonlar | 1-2 döngü |
+| Başarı Oranı | ~%95 |
+| Maksimum Eşzamanlı Kullanıcı | 100+ (uygun hosting ile) |
 
-### Optimization Tips
+### Optimizasyon İpuçları
 
-- Use async/await for API calls
-- Implement caching for repeated tasks
-- Rate limit API requests
-- Monitor token usage
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! This project is part of my AI/ML portfolio but open to improvements.
-
-### How to Contribute
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### Ideas for Contributions
-
-- [ ] Add support for more programming languages
-- [ ] Implement user authentication
-- [ ] Add code execution sandbox
-- [ ] Create unit tests
-- [ ] Improve UI/UX design
-- [ ] Add more agent types (Security Analyst, Performance Optimizer)
+- API çağrıları için async/await kullan
+- Tekrarlanan görevler için önbellekleme uygula
+- API isteklerini hız sınırla
+- Token kullanımını izle
 
 ---
 
-## 📚 Resources & Learning
+## 🤝 Katkıda Bulunma
 
-### Documentation
+Katkılar kabul edilir! Bu proje yapay zeka/makine öğrenimi portfolyomun bir parçası ama iyileştirmelere açık.
 
-- [LangGraph Official Docs](https://langchain-ai.github.io/langgraph/)
-- [FastAPI Documentation](https://fastapi.tiangolo.com/)
+### Nasıl Katkıda Bulunulur
+
+1. Depoyu fork'layın
+2. Özellik branch'i oluşturun (`git checkout -b feature/harika-ozellik`)
+3. Değişikliklerinizi commit edin (`git commit -m 'Harika özellik ekle'`)
+4. Branch'inize push edin (`git push origin feature/harika-ozellik`)
+5. Pull Request açın
+
+### Katkı Fikirleri
+
+- [ ] Daha fazla programlama dili desteği ekle
+- [ ] Kullanıcı kimlik doğrulama uygula
+- [ ] Kod çalıştırma sandbox'ı ekle
+- [ ] Unit testler oluştur
+- [ ] UI/UX tasarımını iyileştir
+- [ ] Daha fazla ajan tipi ekle (Güvenlik Analisti, Performans Optimizatörü)
+
+---
+
+## 📚 Kaynaklar & Öğrenme
+
+### Dokümantasyon
+
+- [LangGraph Resmi Dokümanları](https://langchain-ai.github.io/langgraph/)
+- [FastAPI Dokümantasyonu](https://fastapi.tiangolo.com/)
 - [Google Gemini API](https://ai.google.dev/docs)
 
-### Related Concepts
+### İlgili Kavramlar
 
-- Multi-agent systems
-- State machines
-- Agent-based modeling
-- Collaborative AI
-- Code generation
-
----
-
-## 🎓 Part of AI Portfolio Series
-
-This is **Part 3** of my Agentic AI Portfolio:
-
-1. **📚 LangChain Fundamentals** - Basic chain implementations
-2. **🔄 LangGraph Workflows** - State-based agent workflows
-3. **🤖 Multi-Agent System** - *This Project* - Collaborative AI agents
-4. **🎯 Advanced RAG** - Coming soon...
+- Çok ajanlı sistemler
+- Durum makineleri
+- Ajan tabanlı modelleme
+- İşbirlikçi yapay zeka
+- Kod üretimi
 
 ---
 
-## 📄 License
+## 🎓 Yapay Zeka Portfolyosu Serisinin Parçası
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Bu, Agentic AI Portfolyomun **3. Bölümü**:
+
+1. **📚 LangChain Temelleri** - Temel chain uygulamaları
+2. **🔄 LangGraph İş Akışları** - Durum tabanlı ajan iş akışları
+3. **🤖 Çok Ajanlı Sistem** - *Bu Proje* - İşbirlikçi yapay zeka ajanları
+4. **🎯 Gelişmiş RAG** - Çok yakında...
+
+---
+
+## 📄 Lisans
+
+Bu proje MIT Lisansı altında lisanslanmıştır - detaylar için [LICENSE](LICENSE) dosyasına bakın.
 
 ```
 MIT License
 
-Copyright (c) 2024 Ogulcan Narin
+Copyright (c) 2024 Oğulcan Narin
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction...
+İzin verilir, ücretsiz olarak, bu yazılımın bir kopyasını 
+edinmiş herhangi bir kişiye kısıtlama olmaksızın işlem yapma...
 ```
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 Yazar
 
-**Ogulcan Narin**
+**Oğulcan Narin**
 
-- 🌐 Portfolio: [Coming Soon]
-- 💼 LinkedIn: [Your LinkedIn]
+- 🌐 Portfolio: [Yakında]
+- 💼 LinkedIn: [LinkedIn Profiliniz]
 - 🐙 GitHub: [@ogulcannarin](https://github.com/ogulcannarin)
-- 📧 Email: [Your Email]
+- 📧 Email: [Email Adresiniz]
 
 ---
 
-## 🙏 Acknowledgments
+## 🙏 Teşekkürler
 
-- **Google AI** for the Gemini API
-- **LangChain Team** for the amazing framework
-- **FastAPI** for the high-performance web framework
-- The **open-source community** for inspiration
+- **Google AI** Gemini API için
+- **LangChain Ekibi** harika framework için
+- **FastAPI** yüksek performanslı web framework için
+- **Açık kaynak topluluğu** ilham için
 
 ---
 
-## ⚙️ Troubleshooting
+## ⚙️ Sorun Giderme
 
-### Common Issues
+### Yaygın Sorunlar
 
-**Issue**: `ModuleNotFoundError: No module named 'langchain'`
+**Sorun**: `ModuleNotFoundError: No module named 'langchain'`
 ```bash
-# Solution: Install dependencies
+# Çözüm: Bağımlılıkları yükle
 pip install -r requirements.txt
 ```
 
-**Issue**: `API key not found`
+**Sorun**: `API anahtarı bulunamadı`
 ```bash
-# Solution: Check .env file exists and is properly formatted
-echo "GOOGLE_API_KEY=your_key_here" > .env
+# Çözüm: .env dosyasının var olduğunu ve düzgün biçimlendirildiğini kontrol et
+echo "GOOGLE_API_KEY=anahtarınız_buraya" > .env
 ```
 
-**Issue**: `CORS errors in browser`
+**Sorun**: `Tarayıcıda CORS hataları`
 ```python
-# Solution: Already configured in main.py, ensure backend is running
-# Check that frontend is accessing http://localhost:8000
+# Çözüm: main.py'de zaten yapılandırılmış, backend'in çalıştığından emin ol
+# Frontend'in http://localhost:8000'e eriştiğini kontrol et
 ```
 
-**Issue**: `Port already in use`
+**Sorun**: `Port zaten kullanımda`
 ```bash
-# Solution: Use a different port
+# Çözüm: Farklı bir port kullan
 uvicorn main:app --reload --port 8001
 ```
 
 ---
 
-## 📈 Roadmap
+## 📈 Yol Haritası
 
-- [x] Basic multi-agent system
-- [x] Web UI implementation
-- [x] Docker support
-- [ ] Add more programming languages (JavaScript, Java, Go)
-- [ ] Implement code execution sandbox
-- [ ] Add user authentication
-- [ ] Create comprehensive test suite
-- [ ] Add CI/CD pipeline
-- [ ] Implement code versioning
-- [ ] Add collaborative editing
+- [x] Temel çok ajanlı sistem
+- [x] Web UI uygulaması
+- [x] Docker desteği
+- [ ] Daha fazla programlama dili ekle (JavaScript, Java, Go)
+- [ ] Kod çalıştırma sandbox'ı uygula
+- [ ] Kullanıcı kimlik doğrulama ekle
+- [ ] Kapsamlı test paketi oluştur
+- [ ] CI/CD pipeline ekle
+- [ ] Kod versiyonlama uygula
+- [ ] İşbirlikçi düzenleme ekle
 
 ---
 
-## 💬 FAQ
+## 💬 Sık Sorulan Sorular
 
-**Q: How many iterations does the system perform?**
-A: Maximum 3 iterations to balance quality and performance.
+**S: Sistem kaç iterasyon gerçekleştirir?**
+C: Kalite ve performansı dengelemek için maksimum 3 iterasyon.
 
-**Q: Can I use other LLM providers besides Google Gemini?**
-A: Yes! Modify the model initialization in `app.py` to use OpenAI, Anthropic, etc.
+**S: Google Gemini dışında başka LLM sağlayıcılarını kullanabilir miyim?**
+C: Evet! `app.py` dosyasındaki model başlatmayı OpenAI, Anthropic vb. kullanacak şekilde değiştirin.
 
-**Q: Is this production-ready?**
-A: This is a demonstration project. For production, add authentication, rate limiting, and monitoring.
+**S: Bu üretime hazır mı?**
+C: Bu bir gösteri projesidir. Üretim için kimlik doğrulama, hız sınırlama ve izleme ekleyin.
 
-**Q: Can it generate code in other languages?**
-A: Currently optimized for Python. Adapt the prompts for other languages.
+**S: Başka dillerde kod üretebilir mi?**
+C: Şu anda Python için optimize edilmiş. Diğer diller için promptları uyarlayın.
 
-**Q: How do I contribute?**
-A: See the [Contributing](#-contributing) section above!
+**S: Nasıl katkıda bulunabilirim?**
+C: Yukarıdaki [Katkıda Bulunma](#-katkıda-bulunma) bölümüne bakın!
 
 ---
 
 <div align="center">
 
-### ⭐ Star this repository if you find it helpful!
+### ⭐ Faydalı bulduysanız bu depoyu yıldızlayın!
 
-**Built with ❤️ using LangGraph, FastAPI, and Google Gemini AI**
+**LangGraph, FastAPI ve Google Gemini AI ile ❤️ ile yapıldı**
 
-[🔝 Back to Top](#-multi-agent-code-factory)
+[🔝 Başa Dön](#-çok-ajanlı-kod-fabrikası)
 
 </div>
