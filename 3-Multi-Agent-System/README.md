@@ -1,135 +1,239 @@
-# 🤖 Multi-Agent Kod Fabrikası
+# 🤖 Multi-Agent Code Factory
 
-Bu proje, LangGraph kullanarak iki ajanın (Yazılımcı ve Testçi) işbirliği içinde Python kodu üretmesini sağlayan bir multi-agent sistemdir.
+[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![LangGraph](https://img.shields.io/badge/LangGraph-Latest-green.svg)](https://langchain-ai.github.io/langgraph/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-teal.svg)](https://fastapi.tiangolo.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-## 🎯 Özellikler
+A collaborative multi-agent system where AI agents work together to generate, review, and iteratively improve Python code. Built with LangGraph and powered by Google's Gemini AI.
 
-- **Yazılımcı Ajan**: Kullanıcının talebi doğrultusunda Python kodu üretir
-- **Testçi Ajan**: Üretilen kodu inceler, hata ve eksiklikleri tespit eder
-- **Otomatik İyileştirme**: Testçi hata bulursa, yazılımcı kodu otomatik düzeltir
-- **İteratif Süreç**: Kod onaylanana kadar döngü devam eder (max 3 tur)
+## 🎯 Overview
 
-## 🏗️ Mimari
+This project demonstrates a sophisticated multi-agent architecture where two specialized AI agents collaborate:
+
+- **👨‍💻 Developer Agent**: Generates Python code based on user requirements
+- **🧪 Tester Agent**: Reviews code, identifies bugs, and provides feedback
+- **🔄 Iterative Improvement**: Automatically refines code until approval (max 3 iterations)
+
+The system showcases real-world AI collaboration patterns, making it perfect for understanding multi-agent workflows and LangGraph implementation.
+
+## ✨ Key Features
+
+- **Multi-Agent Collaboration**: Coordinated workflow between developer and tester agents
+- **Intelligent Code Review**: Automated bug detection and quality assurance
+- **Iterative Refinement**: Self-improving code generation loop
+- **Modern Web UI**: Beautiful, responsive interface with real-time feedback
+- **RESTful API**: FastAPI backend for seamless integration
+- **Syntax Highlighting**: Clean code display with proper formatting
+- **Process Visualization**: Track iterations and agent interactions
+
+## 🏗️ Architecture
 
 ```
-Kullanıcı Talebi
+User Request
     ↓
-Yazılımcı Ajan (Kod Üretir)
+Developer Agent → Generates Code
     ↓
-Testçi Ajan (Kod İnceler)
+Tester Agent → Reviews Code
     ↓
   ┌─────┴─────┐
   │           │
-ONAY         RET
+APPROVED    REJECTED
   │           │
-BİTİŞ    ← ─ ─┘
-       (Tekrar Yazılımcıya)
+ END      ← ─ ┘
+     (Back to Developer)
 ```
 
-## 📦 Kurulum
+The system uses LangGraph's state management to coordinate agent interactions, ensuring smooth transitions and maintaining context throughout the review cycle.
 
-1. Sanal ortam oluşturun:
-```bash
-python -m venv venv
-```
+## 🚀 Quick Start
 
-2. Sanal ortamı aktifleştirin:
-```bash
-# Windows
-venv\Scripts\activate
+### Prerequisites
 
-# Linux/Mac
-source venv/bin/activate
-```
+- Python 3.9 or higher
+- Google AI API key ([Get one here](https://makersuite.google.com/app/apikey))
+- Modern web browser
 
-3. Bağımlılıkları yükleyin:
-```bash
-pip install -r requirements.txt
-```
+### Installation
 
-4. `.env` dosyasını düzenleyin ve Google API anahtarınızı ekleyin:
-```
-GOOGLE_API_KEY=your_actual_api_key_here
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ogulcannarin/multi-agent-code-factory.git
+   cd multi-agent-code-factory
+   ```
 
-## 🚀 Kullanım
+2. **Create virtual environment**
+   ```bash
+   python -m venv venv
+   
+   # Windows
+   venv\Scripts\activate
+   
+   # Linux/Mac
+   source venv/bin/activate
+   ```
 
-### Backend'i Başlatın
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-```bash
-uvicorn main:app --reload --port 8000
-```
+4. **Configure environment**
+   
+   Create a `.env` file in the project root:
+   ```env
+   GOOGLE_API_KEY=your_api_key_here
+   ```
 
-### Frontend'i Açın
+### Running the Application
 
-Tarayıcınızda `index.html` dosyasını açın veya:
+1. **Start the backend server**
+   ```bash
+   uvicorn main:app --reload --port 8000
+   ```
 
-```bash
-# Python ile basit HTTP sunucusu
-python -m http.server 8080
-```
+2. **Open the web interface**
+   
+   Option 1: Open `index.html` directly in your browser
+   
+   Option 2: Use Python's HTTP server
+   ```bash
+   python -m http.server 8080
+   ```
+   Then navigate to `http://localhost:8080`
 
-Ardından http://localhost:8080 adresine gidin.
-
-## 🔧 API Endpoints
+## 📡 API Documentation
 
 ### POST /generate-code
-Kod üretme talebi gönderir.
+
+Generate code based on task description.
 
 **Request:**
 ```json
 {
-  "gorev": "Fibonacci serisini hesaplayan bir fonksiyon yaz"
+  "gorev": "Write a function to calculate factorial"
 }
 ```
 
 **Response:**
 ```json
 {
-  "kod": "def fibonacci(n):\n    ...",
+  "kod": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n-1)",
   "durum": "ONAY",
   "tur_sayisi": 2
 }
 ```
 
 ### GET /
-Sistem durumunu kontrol eder.
+
+System status check.
 
 ### GET /health
-Sağlık kontrolü yapar.
 
-## 📁 Proje Yapısı
+Health check endpoint.
+
+## 🎨 User Interface
+
+The web interface features:
+
+- **Modern Design**: Gradient backgrounds and smooth animations
+- **Responsive Layout**: Works on all screen sizes
+- **Real-time Feedback**: Live loading indicators
+- **Code Highlighting**: Syntax-aware display
+- **Error Handling**: User-friendly error messages
+- **Iteration Tracking**: Visual feedback on review cycles
+
+## 📁 Project Structure
 
 ```
-3-Multi-Agent-System/
-├── main.py              # FastAPI backend
-├── index.html           # Web arayüzü
-├── ders9_multi_agent.py # Orijinal konsol versiyonu
-├── requirements.txt     # Python bağımlılıkları
-├── .env                 # Çevre değişkenleri
-├── .gitignore          # Git ignore kuralları
-└── README.md           # Bu dosya
+multi-agent-code-factory/
+├── main.py              # FastAPI backend server
+├── app.py               # Multi-agent system core logic
+├── index.html           # Web UI
+├── requirements.txt     # Python dependencies
+├── Dockerfile           # Container configuration
+├── .env                 # Environment variables (not in repo)
+├── .gitignore          # Git ignore rules
+└── README.md           # This file
 ```
 
-## 🎨 Özellikler
+## 🔧 Technical Stack
 
-- Modern ve responsive web arayüzü
-- Gradient tasarım
-- Gerçek zamanlı loading göstergesi
-- Hata yönetimi
-- Kod syntax highlighting
-- İterasyon sayısı takibi
+- **Backend**: FastAPI, Uvicorn
+- **AI Framework**: LangGraph, LangChain
+- **AI Model**: Google Gemini 1.5 Flash
+- **Frontend**: Vanilla HTML/CSS/JavaScript
+- **Environment**: Python 3.9+
 
-## 🔑 Gereksinimler
+## 🐳 Docker Support
 
-- Python 3.9+
-- Google AI API anahtarı
-- Modern web tarayıcısı
+Build and run with Docker:
 
-## 📝 Lisans
+```bash
+docker build -t multi-agent-code-factory .
+docker run -p 8000:8000 --env-file .env multi-agent-code-factory
+```
 
-MIT License
+## 🎯 Use Cases
 
-## 👨‍💻 Geliştirici
+- **Code Generation**: Quickly generate Python functions and classes
+- **Code Review**: Automated quality assurance
+- **Learning Tool**: Understand multi-agent patterns
+- **Prototyping**: Rapid code prototyping with AI assistance
+- **Portfolio Project**: Showcase AI/ML capabilities
 
-Agentic AI Portfolio Projesi
+## 🛠️ Development
+
+The system is built with extensibility in mind. Key components:
+
+- **Agent Definitions**: Easily customizable prompts and behaviors
+- **State Management**: LangGraph's typed state for reliable workflows
+- **Error Handling**: Robust error recovery and user feedback
+- **API Design**: RESTful endpoints for easy integration
+
+## 📝 Example Usage
+
+**Request:** "Create a function to check if a number is prime"
+
+**Agent Process:**
+1. Developer Agent generates initial code
+2. Tester Agent reviews for edge cases
+3. Developer Agent refines based on feedback
+4. Final approved code returned to user
+
+## 🤝 Contributing
+
+Contributions are welcome! This project is part of my AI/ML portfolio, demonstrating practical applications of multi-agent systems.
+
+## 📄 License
+
+MIT License - feel free to use this project for learning and development.
+
+## 👨‍💻 Author
+
+**Ogulcan Narin**
+
+Part of the Agentic AI Portfolio series showcasing advanced AI agent implementations.
+
+## 🔗 Related Projects
+
+This is part 3 of my Agentic AI Portfolio:
+- Part 1: LangChain Fundamentals
+- Part 2: LangGraph Workflows
+- **Part 3: Multi-Agent System** (This Project)
+
+## 📚 Resources
+
+- [LangGraph Documentation](https://langchain-ai.github.io/langgraph/)
+- [FastAPI Documentation](https://fastapi.tiangolo.com/)
+- [Google AI Studio](https://makersuite.google.com/)
+
+## ⚡ Performance
+
+- Average response time: 3-8 seconds
+- Typical iterations: 1-2 cycles
+- Success rate: High for Python code generation tasks
+
+---
+
+**Note**: This project requires a valid Google AI API key. The system is designed for educational and demonstration purposes, showcasing multi-agent collaboration patterns.

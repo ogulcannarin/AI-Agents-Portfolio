@@ -1,8 +1,5 @@
 import os
-from typing import TypedDict
-from fastapi import FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from typing import TypedDict, Optional
 from langgraph.graph import StateGraph, END
 from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
@@ -10,168 +7,82 @@ from dotenv import load_dotenv
 # 1. AYARLAR
 load_dotenv()
 
-if not os.environ.get("GOOGLE_API_KEY"):
-    print("❌ HATA: .env dosyasında GOOGLE_API_KEY bulunamadı!")
+# Şifre Kontrolü (Hata varsa baştan söyleyelim)
+api_key = os.environ.get("GOOGLE_API_KEY")
+if not api_key:
+    print("❌ HATA: GOOGLE_API_KEY bulunamadı! .env dosyasını kontrol et.")
     exit()
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash")
+llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", google_api_key=api_key)
 
-# 2. UYGULAMA BAŞLAT
-app = FastAPI(title="Multi-Agent System API", version="1.0")
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-# 3. STATE (ORTAK ÇALIŞMA MASASI)
+# 2. STATE (Hafıza)
 class DevTeamState(TypedDict):
-    gorev: str          # Kullanıcının isteği
-    python_kodu: str    # Yazılımcının yazdığı kod
-    inceleme_notu: str  # Testçinin yorumu
-    onay_durumu: str    # "ONAY" veya "RET"
-    tur_sayisi: int     # Sonsuz döngüye girmesin diye sayaç
+    gorev: str
+    python_kodu: str
+    inceleme_notu: str
+    onay_durumu: str
+    tur_sayisi: int
 
-# 4. NODES (ÇALIŞANLAR)
+# 3. NODES (Ajanlar)
 def yazilimci_node(state: DevTeamState):
-    """Görevi alır, kod yazar. Eğer hata varsa düzeltir."""
     print("\n👨‍💻 YAZILIMCI: Kod üzerinde çalışıyorum...")
-    
     gorev = state["gorev"]
     inceleme = state.get("inceleme_notu", "")
     tur = state.get("tur_sayisi", 0)
     
-    # Prompt: Eğer inceleme notu varsa "Düzelt", yoksa "Sıfırdan Yaz"
     if inceleme:
-        prompt = f"""
-        GÖREV: {gorev}
-        MEVCUT KOD: {state['python_kodu']}
-        TESTÇİ RAPORU: {inceleme}
-        
-        Lütfen testçinin raporuna göre koddaki hataları düzelt ve kodu tekrar yaz.
-        Sadece Python kodunu ver, açıklama yapma.
-        """
+        prompt = f"GÖREV: {gorev}\nMEVCUT KOD: {state['python_kodu']}\nTESTÇİ RAPORU: {inceleme}\n\nHataları düzelt ve kodu tekrar yaz. Sadece kodu ver."
     else:
-        prompt = f"""
-        GÖREV: {gorev}
-        Lütfen bu görev için temiz, çalışır bir Python kodu yaz.
-        Sadece Python kodunu ver, açıklama yapma.
-        """
+        prompt = f"GÖREV: {gorev}\nTemiz bir Python kodu yaz. Sadece kodu ver."
     
-    # Kodu yazdır
     cevap = llm.invoke(prompt).content
-    
-    # Temizlik (Markdown işaretlerini kaldır)
     temiz_kod = cevap.replace("```python", "").replace("```", "").strip()
-    
-    return {
-        "python_kodu": temiz_kod, 
-        "tur_sayisi": tur + 1
-    }
+    return {"python_kodu": temiz_kod, "tur_sayisi": tur + 1}
 
 def testci_node(state: DevTeamState):
-    """Kodu okur, hata arar."""
     print("\n🕵️‍♂️ TESTÇİ: Kodu inceliyorum...")
-    
     kod = state["python_kodu"]
-    
-    # LLM'e soruyoruz: Bu kodda hata var mı?
-    prompt = f"""
-    Sen kıdemli bir kod inceleme uzmanısın (QA).
-    Aşağıdaki Python kodunu analiz et.
-    
-    KOD:
-    {kod}
-    
-    KURALLAR:
-    1. Eğer kodda mantık hatası, eksik import veya güvenlik açığı varsa: "RET" de ve hatayı açıkla.
-    2. Eğer kod kusursuzsa ve çalışacak gibiyse: Sadece "ONAY" yaz.
-    """
-    
+    prompt = f"KOD:\n{kod}\n\nAnaliz et. Hata varsa 'RET' de ve açıkla. Yoksa 'ONAY' yaz."
     cevap = llm.invoke(prompt).content
     
     if "ONAY" in cevap:
-        print("   -> ✅ Testçi: Mükemmel, onaylıyorum.")
+        print("   -> ✅ Testçi: Onaylıyorum.")
         return {"onay_durumu": "ONAY", "inceleme_notu": ""}
     else:
-        print(f"   -> ❌ Testçi: Hata buldum! Geri gönderiyorum.\n   Not: {cevap[:100]}...")
+        print(f"   -> ❌ Testçi: Hata buldum! Geri gönderiyorum.")
         return {"onay_durumu": "RET", "inceleme_notu": cevap}
 
-# 5. ROUTER (TRAFİK POLİSİ)
+# 4. ROUTER
 def karar_mekanizmasi(state: DevTeamState):
-    durum = state.get("onay_durumu")
-    tur = state.get("tur_sayisi", 0)
-    
-    # Güvenlik Kilidi: 3 turdan fazla dönerse zorla bitir
-    if tur > 3:
-        print("\n⚠️ UYARI: Çok fazla deneme yapıldı, işlem sonlandırılıyor.")
+    if state.get("tur_sayisi", 0) > 3: 
+        print("⚠️ Çok fazla tur, durduruluyor.")
         return END
-    
-    if durum == "ONAY":
-        return END           # Bitiş
-    else:
-        return "yazilimci"   # Başa dön (Loop)
+    if state.get("onay_durumu") == "ONAY": 
+        return END
+    return "yazilimci"
 
-# 6. GRAPH İNŞASI
+# 5. GRAPH
 builder = StateGraph(DevTeamState)
-
 builder.add_node("yazilimci", yazilimci_node)
 builder.add_node("testci", testci_node)
-
 builder.set_entry_point("yazilimci")
-
-# Yazılımcı bitince -> Testçiye git
 builder.add_edge("yazilimci", "testci")
+builder.add_conditional_edges("testci", karar_mekanizmasi, {"yazilimci": "yazilimci", END: END})
 
-# Testçi bitince -> Karar ver (Dönelim mi bitirelim mi?)
-builder.add_conditional_edges(
-    "testci",
-    karar_mekanizmasi,
-    {
-        "yazilimci": "yazilimci",
-        END: END
-    }
-)
+app = builder.compile()
 
-# Graph'ı derle
-multi_agent = builder.compile()
-
-# 7. API ENDPOINTS
-class GorevIstegi(BaseModel):
-    gorev: str
-
-class GorevCevap(BaseModel):
-    kod: str
-    durum: str
-    tur_sayisi: int
-
-@app.post("/generate-code", response_model=GorevCevap)
-async def generate_code(istek: GorevIstegi):
-    print(f"\n🚀 GÖREV ALINDI: {istek.gorev}")
+# 6. BAŞLATMA KOMUTU
+if __name__ == "__main__":
+    print("🚀 KOD FABRİKASI (Docker) BAŞLATILIYOR...")
     
+    # Kullanıcıdan görev iste
     try:
-        sonuc = multi_agent.invoke({"gorev": istek.gorev})
-        
-        return {
-            "kod": sonuc["python_kodu"],
-            "durum": sonuc.get("onay_durumu", "TAMAMLANDI"),
-            "tur_sayisi": sonuc.get("tur_sayisi", 0)
-        }
+        gorev = input("👉 Hangi kodu yazayım?: ")
+        if gorev:
+            sonuc = app.invoke({"gorev": gorev})
+            print("\n" + "="*40)
+            print("🏁 FİNAL KOD:")
+            print("="*40)
+            print(sonuc["python_kodu"])
     except Exception as e:
-        print(f"❌ HATA: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
-
-@app.get("/")
-def home():
-    return {
-        "durum": "aktif", 
-        "mesaj": "Multi-Agent Kod Fabrikası Çalışıyor!",
-        "ajanlar": ["Yazılımcı", "Testçi"]
-    }
-
-@app.get("/health")
-def health_check():
-    return {"status": "healthy", "agents": 2}
+        print(f"Bir hata oluştu: {e}")
