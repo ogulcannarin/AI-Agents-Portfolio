@@ -1,167 +1,129 @@
-# 🤖 Yapay Zeka Ajanları Portföyü
+# 🤖 Yapay Zeka Ajanları Portföyü (AI Agents Portfolio)
 
-Yapay Zeka Ajanları Portföyüme hoş geldiniz! Bu repo, **LangChain**, **LangGraph** ve **Multi-Agent Sistemler** gibi en güncel framework'ler kullanılarak geliştirilmiş akıllı ajanların pratik uygulamalarını sergiliyor.
+Yapay Zeka Ajanları Portföyüme hoş geldiniz! Bu depo, detaylı analitik düşünebilen, kendi kendine plan yapabilen, çeşitli araçlar (tools) kullanabilen ve karmaşık görevleri otonom olarak yürütebilen **Yeni Nesil Yapay Zeka Ajanlarının (AI Agents)** pratik uygulamalarını sergilemektedir. 
+
+Projelerde **LangChain**, **LangGraph**, **Model Context Protocol (MCP)**, **ReAct Mimarisi** ve **RAG (Retrieval-Augmented Generation)** gibi endüstri standardı framework ve mimariler kullanılmıştır.
+
+---
 
 ## 📋 İçindekiler
 
-- [Genel Bakış](#genel-bakış)
-- [Projeler](#projeler)
-- [Kullanılan Teknolojiler](#kullanılan-teknolojiler)
-- [Başlangıç](#başlangıç)
-- [Proje Yapısı](#proje-yapısı)
-- [Katkıda Bulunma](#katkıda-bulunma)
-- [Lisans](#lisans)
+- [🎯 Genel Bakış](#-genel-bakış)
+- [📂 Projeler ve Klasör Yapısı](#-projeler-ve-klasör-yapısı)
+- [🛠️ Kullanılan Teknolojiler (Teknoloji Yığını)](#️-kullanılan-teknolojiler-teknoloji-yığını)
+- [🎬 Başlangıç ve Kurulum](#-başlangıç-ve-kurulum)
+- [🤝 Katkıda Bulunma](#-katkıda-bulunma)
+- [📝 Lisans](#-lisans)
+
+---
 
 ## 🎯 Genel Bakış
 
-Bu portföy, düşünebilen, planlayabilen ve görevleri yürütebilen akıllı ve otonom yapay zeka ajanları oluşturma konusundaki uzmanlığımı göstermektedir. Her proje, basit ReAct kalıplarından karmaşık çok ajanlı orkestrasyonlara kadar ajansal yapay zeka sistemlerinin farklı yönlerini sergiliyor.
+Yapay zeka asistanlarının sadece metin ürettiği günlerden, hedeflere ulaşmak için eyleme geçtiği günlere geçiş yapıyoruz. Bu portföy, tekil ajan mantıklarından (Single-Agent) karmaşık iş gücü hiyerarşilerine (Multi-Agent Systems) kadar geniş bir yelpazede geliştirilmiş sistemleri barındırmaktadır. Her bir klasör, farklı bir yeteneği (Hafıza, Planlama, Araç Kullanımı, Dış Dünya İletişimi) ön plana çıkarmaktadır.
 
-## 🚀 Projeler
+---
 
-### 1. LangChain ReAct Ajanı
-LangChain'in ReAct (Akıl Yürütme + Eylem) kalıbıyla oluşturulmuş sofistike bir ajan. Bu ajan:
-- Problemler hakkında adım adım akıl yürütebilir
-- Bilgi toplamak için harici araçları kullanabilir
-- Gözlemlere dayalı kararlar alabilir
-- Otonom olarak eylemler gerçekleştirebilir
+## 📂 Projeler ve Klasör Yapısı
 
-**Temel Özellikler:**
-- Araç entegrasyonu (web araması, hesaplamalar vb.)
-- Adım adım akıl yürütme şeffaflığı
-- Hata işleme ve kurtarma
+Depo içerisindeki tüm projeler aşağıda numaralandırılarak veya isimlendirilerek listelenmiştir. Her projenin kendi klasörü içerisinde detaylı bir `README.md` dosyası bulunmaktadır.
 
-### 2. LangGraph Hafıza Ajanı
-Kalıcı hafıza ile durum bilgisi içeren konuşmalar için LangGraph kullanan gelişmiş bir ajan. Bu ajan:
-- Birden fazla etkileşim boyunca bağlamı korur
-- Graf tabanlı iş akışı yönetimi kullanır
-- Karmaşık karar ağaçları uygular
-- Tutarlı, bağlama duyarlı yanıtlar sağlar
+### 1. [LangGraph Hafıza Ajanı](./1-LangGraph-Memory-Agent) 🧠
+Kalıcı hafızaya (persistence) ve gelişmiş analiz yeteneklerine sahip LangGraph tabanlı akıllı asistan.
+- **Odak Noktası:** Geçmiş diyalogları unutmayan (SQLite tabanlı State Management) yapı.
+- **Kabiliyetleri:** PDF doküman mimarilerini anlama, Tavily API ile gerçek zamanlı web araştırması.
 
-**Temel Özellikler:**
-- Oturumlar arası kalıcı hafıza
-- Graf tabanlı durum yönetimi
-- Çok turlu konuşma işleme
-- Dinamik iş akışı adaptasyonu
+### 2. [Çok Ajanlı Kod Fabrikası](./2-Multi-Agent-System) 🏭
+Geliştirici ve test uzmanı ajanların işbirliği içinde yazılım ürettiği simülasyon.
+- **Odak Noktası:** Farklı görevlere sahip ajanların birbirini denetlemesi (Actor-Critic).
+- **Kabiliyetleri:** Otomatik kod inceleme, otonom refactoring süreçleri, Docker orkestrasyonu.
 
-### 3. Çoklu Ajan Sistemi
-Karmaşık problemleri çözmek için birlikte çalışan birden fazla uzmanlaşmış ajanın olduğu işbirlikçi bir sistem. Özellikler:
-- **Orkestratör Ajan**: Uzmanlaşmış ajanlar arasında görevleri koordine eder
-- **Araştırma Ajanı**: Bilgi toplar ve analiz eder
-- **Planlama Ajanı**: Yapılandırılmış planlar ve stratejiler oluşturur
-- **Yürütme Ajanı**: Planlara dayalı çözümleri uygular
+### 3. [NEXUS: Otonom Kurumsal Sistem](./3-NEXUS-Autonomous-Enterprise) 🏢
+Hiyerarşik planlama yapabilen, yönetici sıfatlı bir ajanın diğer uzman ajanları koordine ettiği sistem.
+- **Odak Noktası:** Pydantic Structured Outputs ile kesin kuralcı görev dağılımı.
+- **Kabiliyetleri:** Kompleks hedefleri alt görevlere bölme, araştırma ve analiz süreçlerinin otomasyonu.
 
-**Temel Özellikler:**
-- Ajanlar arası iletişim
-- Görev ayrıştırma ve delegasyonu
-- İşbirlikçi problem çözme
-- Gerçek zamanlı etkileşim için web arayüzü
+### 4. [Context-Aware RAG Asistanı](./4-Context-Aware-RAG-Assistant) 📚
+Kendi verileriniz üzerinde bağlamı kaybetmeden gezinmeyi sağlayan LLM entegrasyonu.
+- **Odak Noktası:** Vektör arama tabanlı, halüsinasyonları önleyen Retrieval Augmented Generation mimarisi.
+- **Kabiliyetleri:** ChromaDB ile yüksek hızlı metin aramaları, karmaşık PDF analizleri.
 
-## 🛠️ Kullanılan Teknolojiler
+### 5. [AWS Çoklu Ajan Haber Ajansı](./5-AWS-Multi-Agent-News) 📰 *(Geliştirme Aşamasında)*
+Gerçek zamanlı haber üreten ve AWS ortamında yayına hazır olacak şekilde tasarlanan mimari.
+- **Odak Noktası:** Cloud Native, mikroservis odaklı yapı.
+- **Planlanan:** Haber kazıma (web scraping), PostgreSQL medya arşivi.
 
-- **Python 3.8+**: Temel programlama dili
-- **LangChain**: LLM uygulamaları oluşturmak için framework
-- **LangGraph**: Ajansal iş akışları için durum yönetimi
-- **Groq API**: Hızlı LLM çıkarımı
-- **Tavily API**: Web arama yetenekleri
-- **Flask**: Çoklu ajan sistemi için web framework'ü
-- **HTML/CSS/JavaScript**: Frontend arayüzleri
+### 6. [Mini Otonom Yapay Zeka Ajanı (AutoGPT Mantığı)](./6-AutoGen) ⚙️
+Tam otonom olarak `ReAct` (Düşünce ve Eylem) felsefesiyle döngüsel çalışan Mini AutoGPT.
+- **Odak Noktası:** Bir hedefe ulaşana kadar dış dünyadan veri çekme ve kendi kendine plan yapma.
+- **Kabiliyetleri:** Dinamik araç kullanımı (DuckDuckGo Search) ve Reasoning süreçleri.
 
-## 🎬 Başlangıç
+### 7. [Model Context Protocol (MCP) Uygulamaları](./7-MCP) 🔌
+MCP standardı kullanılarak dış dünya veritabanları (SQLite) ve API'lerinin yapay zekaya açıldığı asistanlar.
+- **Odak Noktası:** Anthropic'in tanıttığı MCP protokolünün pratik, saf Python uygulamaları.
+- **Kabiliyetleri:** Asenkron veri çekme, SQLite gömülü veritabanı ile uzun dönemli (Long-term) etkileşim.
 
-### Gereksinimler
+### 8. [ReAct ve Reflection Ajanı](./8-ReAct-Reflection) 🪞
+Bir dil modelinin ürettiği sonucu dış dünyaya sunmadan önce kendi kendine "iç kalite kontrolünden" (Reflection) geçirdiği simülasyon.
+- **Odak Noktası:** Hata payını sıfıra indirmeyi amaçlayan, modelin kendi çıktısını eleştiriye tutma mantığı.
+- **Kabiliyetleri:** Halüsinasyon azaltma, hatalı API dönüşlerini yakalama ve otonom retry (yeniden deneme) mekanizmaları.
 
-- Python 3.8 veya üzeri
-- API Anahtarları:
-  - [Groq API Anahtarı](https://console.groq.com/)
-  - [Tavily API Anahtarı](https://tavily.com/)
+---
 
-### Kurulum
+## 🛠️ Kullanılan Teknolojiler (Teknoloji Yığını)
 
-1. **Repository'yi klonlayın**
+Projelerin geneline yayılan teknolojik altyapı:
+
+- **Orkestrasyon & Frameworks:** LangChain, LangGraph, FastAPI, FastMCP, Flask
+- **Büyük Dil Modelleri (LLM):** Google Gemini 2.0 Serisi, OpenAI GPT-4o & GPT-4o-mini
+- **Hafıza & Veritabanı:** 
+  - Vektör Veritabanı: ChromaDB
+  - İlişkisel Veritabanı: PostgreSQL, SQLite
+- **Özel Araçlar (Tools):** Tavily AI (İnternet Arama), BeautifulSoup4, DuckDuckGo Search
+- **DevOps & Dağıtım:** Docker, Docker Compose, AWS Servisleri (Hazırlık)
+- **Ana Diller:** Python 3.9+, Minimal JavaScript ve HTML/CSS
+
+---
+
+## 🎬 Başlangıç ve Kurulum
+
+Her alt proje özerk bir yapıya sahiptir. Seçtiğiniz projenin klasörüne giderek o projeye ait `README.md` dosyasını okuyunuz. 
+
+Genel geçerli adımlar aşağıda belirtilmiştir:
+
+1. **Repoyu Klonlayın:**
    ```bash
    git clone https://github.com/ogulcannarin/AI-Agents-Portfolio.git
    cd AI-Agents-Portfolio
    ```
 
-2. **Bağımlılıkları yükleyin**
-   
-   Her projenin kendi bağımlılıkları vardır. İlgili proje klasörüne gidin ve yükleyin:
-   
+2. **Gereksinimleri Yükleyin:**
+   İncelemek istediğiniz projenin klasörüne girin (Örn: `cd MCP`) ve bağımlılıkları yükleyin:
    ```bash
-   # Herhangi bir proje için
-   cd 1-LangChain-ReAct-Agent  # veya 2-LangGraph-Memory-Agent veya 3-Multi-Agent-System
    pip install -r requirements.txt
    ```
+   *(Eğer sadece tek bir betik varsa örnek bir sanal ortam oluşturup dosyada istenen kütüphaneleri `pip install` ile manuel kurabilirsiniz.)*
 
-3. **Ortam değişkenlerini ayarlayın**
-   
-   Her proje dizininde bir `.env` dosyası oluşturun:
-   
+3. **Çevre Değişkenleri (`.env`):**
+   Uygulamalar büyük oranda OpenAI veya Gemini API anahtarlarına ihtiyaç duyar. Klasörde bir `.env` oluşturup anahtarlarınızı girin:
    ```env
-   GROQ_API_KEY=buraya_groq_api_anahtarınız
-   TAVILY_API_KEY=buraya_tavily_api_anahtarınız
+   OPENAI_API_KEY=sk-...
+   GEMINI_API_KEY=AIza...
    ```
 
-4. **Projeyi çalıştırın**
-   
-   ```bash
-   # Python tabanlı ajanlar için
-   python main.py
-   
-   # Web arayüzlü Çoklu Ajan Sistemi için
-   cd 3-Multi-Agent-System
-   python main.py
-   # Ardından tarayıcınızda http://localhost:5000 adresini açın
-   ```
-
-## 📁 Proje Yapısı
-
-```
-AI-Agents-Portfolio/
-│
-├── 1-LangChain-ReAct-Agent/
-│   ├── main.py              # Ana ajan implementasyonu
-│   ├── requirements.txt     # Python bağımlılıkları
-│   └── README.md           # Projeye özel dokümantasyon
-│
-├── 2-LangGraph-Memory-Agent/
-│   ├── main.py              # Hafıza özellikli ajan
-│   ├── requirements.txt     # Python bağımlılıkları
-│   └── README.md           # Projeye özel dokümantasyon
-│
-├── 3-Multi-Agent-System/
-│   ├── main.py              # Çoklu ajan orkestrasyonu ile Flask backend
-│   ├── index.html           # Web arayüzü
-│   ├── requirements.txt     # Python bağımlılıkları
-│   └── README.md           # Projeye özel dokümantasyon
-│
-├── .gitignore              # Git ignore kuralları
-└── README.md               # Bu dosya
-```
-
-## 💡 Kullanım Senaryoları
-
-- **Otomatik Araştırma**: Bilgi arayabilen, analiz edebilen ve özetleyebilen ajanlar
-- **Görev Planlama**: Karmaşık görevleri eyleme dönüştürülebilir adımlara ayıran yapay zeka sistemleri
-- **Karar Verme**: Problemler üzerinde akıl yürüten akıllı ajanlar
-- **İşbirlikçi Yapay Zeka**: Karmaşık problemler üzerinde birlikte çalışan birden fazla ajan
-
-## 🤝 Katkıda Bulunma
-
-Katkılar, sorunlar ve özellik istekleri memnuniyetle karşılanır! [Issues sayfasını](https://github.com/ogulcannarin/AI-Agents-Portfolio/issues) kontrol etmekten çekinmeyin.
-
-## 📝 Lisans
-
-Bu proje [MIT](LICENSE) lisansı altındadır.
-
-## 📧 İletişim
-
-**Oğulcan Narin**
-- GitHub: [@ogulcannarin](https://github.com/ogulcannarin)
-- LinkedIn: [LinkedIn Profiliniz](https://linkedin.com/in/yourprofile)
+4. **Uygulamayı Başlatın:**
+   `python app.py` veya `python main.py` ile sistemi başlatabilirsiniz.
 
 ---
 
-⭐ Bu repository'yi yararlı buluyorsanız, lütfen yıldız vermeyi düşünün!
+## 🤝 Katkıda Bulunma
 
-**LangChain, LangGraph ve en güncel yapay zeka teknolojileri ile ❤️ ile geliştirildi**
+Bu repo, Yapay Zeka Ajanları mimarilerinde yeni teknikler keşfetmeyi amaçlayan eğitim odaklı bir portföydür. Hata bildirimleriniz (Issues), yeni araç (Tool) fikirleriniz ve doğrudan katkılarınız (Pull Requests) son derece değerlidir!
+
+## 📝 Lisans
+
+Bu proje, açık kaynak topluluğuna katkı sağlamak amacıyla [MIT Lisansı](LICENSE) altında sunulmaktadır.
+
+---
+**Oğulcan Narin** | [GitHub](https://github.com/ogulcannarin) | [LinkedIn](https://linkedin.com/in/ogulcannarin)
+
+⭐ *Eğer projeler yapay zeka serüveninizde ufkunuzu açtıysa github üzerinden yıldız vermeyi unutmayın!* 
