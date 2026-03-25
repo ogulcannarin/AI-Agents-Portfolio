@@ -1,56 +1,68 @@
-# 🧠 LangGraph Hafıza Ajanı (Memory Agent)
+# LangGraph Temelleri ve İleri Seviye Örnekler 🦜🕸️
 
-Bu proje, **LangGraph** framework'ü kullanılarak geliştirilmiş, kalıcı hafıza (persistence) ve PDF doküman analizi yeteneklerine sahip akıllı bir yapay zeka asistanıdır.
+LangGraph, standart LangChain yeteneklerini güçlendirerek uygulamanızın **durumlu (stateful)**, döngüsel (cyclic) ve çok aktörlü (multi-actor) yeteneklerle yapılandırılmasını sağlayan devasa bir framework'tür. Bu depoda basit bir ajan tasarımından, dışarıdan araç (tool) kullanabilen karmaşık bir yapıya kadar giden bir eğitim seti hazırlanmıştır.
 
-## ✨ Özellikler
+## 🎯 Proje Hedefi
 
-- **💾 Kalıcı Hafıza**: `SqliteSaver` kullanarak kullanıcı konuşmalarını veritabanında saklar. Uygulama kapansa bile `thread_id` üzerinden eski konuşmaları hatırlar.
-- **📄 PDF Analizi**: Yüklenen PDF (Örn: CV) dosyalarını okur ve içeriği hakkında sorulan soruları cevaplar.
-- **🌍 Dinamik Web Araması**: Eğer sorulan sorunun cevabı dokümanda yoksa, ajan otomatik olarak **Tavily AI** üzerinden internette araştırma yapar.
-- **🤖 Akıllı Yönlendirme**: LangGraph `StateGraph` mimarisi ile kararlar alır (Doküman mı? Web mi? Sohbet mi?).
-- **🚀 FastAPI Backend**: Modern ve hızlı asenkron API desteği.
+Bu klasördeki örnekler kullanılarak şunların kavranılması amaçlanmıştır:
+1. **Düğüm ve Kenar (Node & Edge) Yapıları:** Geleneksel zincir (chain) yapılarının aksine graf tabanlı akış kontrolü (`StateGraph`).
+2. **Hafıza Yönetimi (Memory Checkpointing):** Geçmiş sohbet oturumlarının (`thread_id`) hatırlanarak konuşma bağlamının (context) hafızaya alınabilmesi.
+3. **Araç Kullanımı (Tool Calling):** Büyük Dil Modellerinin (LLM) dış dünyaya ait (ör: hava durumu) gerçek zamanlı verilere erişmek için tanımlanmış fonksiyonları akıllıca tetiklemesi.
+4. **Koşullu Yönlendirme (Conditional Routing):** Ajanın state'e ve dış verilere bakarak duruma göre hangi rotaya gideceğine karar vermesi.
 
-## 🏗️ Mimari
+## 📁 Detaylı Klasör Yapısı
 
-Ajanın çalışma mantığı şu hiyerarşiyi takip eder:
-1. **Giriş**: Kullanıcı sorusu alınır.
-2. **CV Kontrol Düğümü (Node)**: PDF okunur, LLM içeriği analiz eder.
-3. **Karar Mekanizması**: Eğer bilgi PDF'te varsa cevap döner, yoksa Web Arama düğümüne yönlendirir.
-4. **Web Arama Düğümü**: Tavily API ile internetten güncel veri çeker.
-5. **Çıkış**: Sonuç kullanıcıya iletilir ve hafızaya kaydedilir.
+```text
+LangGraph/
+├── images/             # Projeye dair şemalar, logolar ve ekran alıntıları burada yer alır
+│   ├── image 1.png
+│   ├── image 2.png
+│   └── ...
+├── src/                # LangGraph Python betikleri (Temel Eğitim Seti)
+│   ├── memory.py       # LLM Hafıza entegrasyonu (MemorySaver)
+│   ├── orn.py          # StateGraph temelleri ve Koşullu Yönlendirme
+│   ├── tools.py        # ToolNode ve akıllı ajan tasarımı
+│   └── README.md       # -> Python dosyalarının detaylı kod açıklamalarını içerir
+└── README.md           # Proje ana yönergesi (Şu an okuduğunuz belge)
+```
 
-## 📂 Dosya Yapısı
+## 🛠️ Kurulum Yönergeleri
 
-- `main.py`: FastAPI backend ve LangGraph mantığı.
-- `index.html`: Kullanıcı arayüzü (Frontend).
-- `hafiza.sqlite`: Konuşma geçmişinin saklandığı veritabanı.
-- `ornek_cv.pdf`: Ajanın analiz ettiği örnek doküman.
+Uygulamanın bilgisayarınızda yerel testlerini yapabilmek için aşağıdaki yönergeleri harfiyen izlemeniz önerilir.
 
-## 🚀 Başlangıç
-
-### 1. Bağımlılıkları Yükleyin
+### 1) Python Sürümü Kontrolü
+Sisteminizde Python 3.9 veya daha yüksek bir sürümün kurulu olduğundan emin olun. Komut istemcinize (cmd/powershell) şunu yazarak test edebilirsiniz:
 ```bash
-pip install fastapi uvicorn langchain-google-genai langgraph tavily-python pypdf python-dotenv
+python --version
 ```
 
-### 2. API Anahtarlarını Ayarlayın
-`.env` dosyası oluşturun:
-```env
-GOOGLE_API_KEY=your_google_api_key
-TAVILY_API_KEY=your_tavily_api_key
-```
-
-### 3. Uygulamayı Çalıştırın
+### 2) Gerekli Kütüphanelerin Kurulumu
+Bu projede Langchain'in temel paketleri, yapay zeka entegrasyonu (OpenAI) ve graf kütüphanesi (LangGraph) kullanılmıştır.
 ```bash
-python main.py
+pip install -U langgraph langchain-openai langchain-core
 ```
-Uygulama başladıktan sonra `index.html` dosyasını tarayıcınızda açarak ajanla konuşmaya başlayabilirsiniz.
 
-## 🛠️ Kullanılan Teknolojiler
-- **LangGraph**: Durum yönetimi ve iş akışı.
-- **Google Gemini 2.0 Flash**: Ana dil modeli.
-- **SQLite**: Kalıcı hafıza deposu.
-- **Tavily AI**: Gerçek zamanlı web arama motoru.
+### 3) API Key Tanımlanması
+Projedeki yapay zeka ajanı `gpt-4o` modeli kullanılarak kodlanmıştır. Bu sistemin çalışabilmesi için işletim sisteminizde bir `OPENAI_API_KEY` değişkeni tanımlı olmalıdır.
 
----
-**Geliştirici:** Oğulcan Narin
+**Windows (PowerShell) için örnek kullanım:**
+```powershell
+$env:OPENAI_API_KEY="sk-BURAYA_API_ANAHTARINIZI_GIRIN"
+python src/orn.py
+```
+*(Alternatif olarak bu anahtarı Windows Başlat > Ortam Değişkenleri menüsünden kalıcı olarak sisteme ekleyebilirsiniz).*
+
+## 🧠 LangGraph "Otonom Araç" Döngüsü Nasıl Çalışır?
+
+Aşağıdaki diyagramda bu repodaki ajanın genel çalışma (Node ve Edge) mantığını (`tools.py` için) görselleştirdik:
+
+```mermaid
+graph TD;
+    START((Başlangıç)) --> Agent[Ajan Düğümü: LLM Durumu İnceler];
+    Agent --> Router{Araç İhtiyacı Var Mı?};
+    Router -- Evet, Araç Çağrısı Yapıldı --> Tools[Araç Düğümü: İsteği Çalıştırır];
+    Tools -- Cümlenin oluşturulması için State güncellenir --> Agent;
+    Router -- Hayır, Normal Yanıt Verildi --> END((Bitiş));
+```
+
+Kodlara dair özel detayları, fonksiyonların ne işe yaradığını ve kullanım durumlarını satır satır anlamak için **[src/README.md](src/README.md) dosyasını mutlaka okuyunuz!**
