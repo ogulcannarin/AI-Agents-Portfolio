@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_65480b56472c183cda7d1ba90a96c392 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_65480b56472c183cda7d1ba90a96c392" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_65480b56472c183cda7d1ba90a96c392 = L.map(
+                "map_65480b56472c183cda7d1ba90a96c392",
+                {
+                    center: [40.9864695, 29.0326808],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_fa723b36cb26ad5ae853d7ab87a0e9cc = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_fa723b36cb26ad5ae853d7ab87a0e9cc.addTo(map_65480b56472c183cda7d1ba90a96c392);
+        
+    
+            var marker_f0bfe9728313efc297da3f6455905e20 = L.marker(
+                [40.9864695, 29.0326808],
+                {
+}
+            ).addTo(map_65480b56472c183cda7d1ba90a96c392);
+        
+    
+            var icon_23b0a5e46658be52d68f6da4a34d4c33 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_463ae2736c9b3cc5d8226bb278e7033d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_749b92f9b61e6b9a61fc2b9ba2d6ba99 = $(`<div id="html_749b92f9b61e6b9a61fc2b9ba2d6ba99" style="width: 100.0%; height: 100.0%;"><b>Sinematek</b><br>Museum</div>`)[0];
+                popup_463ae2736c9b3cc5d8226bb278e7033d.setContent(html_749b92f9b61e6b9a61fc2b9ba2d6ba99);
+            
+        
+
+        marker_f0bfe9728313efc297da3f6455905e20.bindPopup(popup_463ae2736c9b3cc5d8226bb278e7033d)
+        ;
+
+        
+    
+    
+            marker_f0bfe9728313efc297da3f6455905e20.bindTooltip(
+                `<div>
+                     Sinematek
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f0bfe9728313efc297da3f6455905e20.setIcon(icon_23b0a5e46658be52d68f6da4a34d4c33);
+            
+    
+            var marker_092104de81398fca88779282f363cc2b = L.marker(
+                [40.9817446, 29.0249323],
+                {
+}
+            ).addTo(map_65480b56472c183cda7d1ba90a96c392);
+        
+    
+            var icon_fb946c0d7cdcdba29e78bf96794d9d79 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_232e627d3c5eda898c2153861efb0c4a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f7f869c7911afd21aecfe04de55bd64b = $(`<div id="html_f7f869c7911afd21aecfe04de55bd64b" style="width: 100.0%; height: 100.0%;"><b>Barış Manço Evi</b><br>Museum</div>`)[0];
+                popup_232e627d3c5eda898c2153861efb0c4a.setContent(html_f7f869c7911afd21aecfe04de55bd64b);
+            
+        
+
+        marker_092104de81398fca88779282f363cc2b.bindPopup(popup_232e627d3c5eda898c2153861efb0c4a)
+        ;
+
+        
+    
+    
+            marker_092104de81398fca88779282f363cc2b.bindTooltip(
+                `<div>
+                     Barış Manço Evi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_092104de81398fca88779282f363cc2b.setIcon(icon_fb946c0d7cdcdba29e78bf96794d9d79);
+            
+    
+            var marker_12a69c70847e8ad15292c91bfede65ba = L.marker(
+                [40.9963286, 29.0418136],
+                {
+}
+            ).addTo(map_65480b56472c183cda7d1ba90a96c392);
+        
+    
+            var icon_c1c3b5b1856f50a69aef59a8695c6171 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1afa5b3d1cc53b0dfa4c09fc990b74cd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c6785a19c2cfca6325d2f2e1de9ab1b0 = $(`<div id="html_c6785a19c2cfca6325d2f2e1de9ab1b0" style="width: 100.0%; height: 100.0%;"><b>İklim Müzesi</b><br>Museum</div>`)[0];
+                popup_1afa5b3d1cc53b0dfa4c09fc990b74cd.setContent(html_c6785a19c2cfca6325d2f2e1de9ab1b0);
+            
+        
+
+        marker_12a69c70847e8ad15292c91bfede65ba.bindPopup(popup_1afa5b3d1cc53b0dfa4c09fc990b74cd)
+        ;
+
+        
+    
+    
+            marker_12a69c70847e8ad15292c91bfede65ba.bindTooltip(
+                `<div>
+                     İklim Müzesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_12a69c70847e8ad15292c91bfede65ba.setIcon(icon_c1c3b5b1856f50a69aef59a8695c6171);
+            
+    
+            var marker_b4ea08387abbb3bb178aad4c02943cbd = L.marker(
+                [40.9966248, 29.0423782],
+                {
+}
+            ).addTo(map_65480b56472c183cda7d1ba90a96c392);
+        
+    
+            var icon_b320b9b531e98185782a1965a51d57c1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c54179079180a5ae5306ddd5849398ce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4cb4529c50baf1ddacd6beb016b9cd4e = $(`<div id="html_4cb4529c50baf1ddacd6beb016b9cd4e" style="width: 100.0%; height: 100.0%;"><b>İkbaliye Sokağı</b><br>Museum</div>`)[0];
+                popup_c54179079180a5ae5306ddd5849398ce.setContent(html_4cb4529c50baf1ddacd6beb016b9cd4e);
+            
+        
+
+        marker_b4ea08387abbb3bb178aad4c02943cbd.bindPopup(popup_c54179079180a5ae5306ddd5849398ce)
+        ;
+
+        
+    
+    
+            marker_b4ea08387abbb3bb178aad4c02943cbd.bindTooltip(
+                `<div>
+                     İkbaliye Sokağı
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b4ea08387abbb3bb178aad4c02943cbd.setIcon(icon_b320b9b531e98185782a1965a51d57c1);
+            
+    
+            var marker_bea980028943f59f6a91973aacfa8d91 = L.marker(
+                [40.9967582, 29.0429015],
+                {
+}
+            ).addTo(map_65480b56472c183cda7d1ba90a96c392);
+        
+    
+            var icon_cd0fe78dd4fc4443976cb940e590a6ef = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bc4a76add6f28dcb4e91ca3cf142fb7f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a9a50ceef227d0caca52acd03e346e00 = $(`<div id="html_a9a50ceef227d0caca52acd03e346e00" style="width: 100.0%; height: 100.0%;"><b>Müze Gazhane</b><br>Museum</div>`)[0];
+                popup_bc4a76add6f28dcb4e91ca3cf142fb7f.setContent(html_a9a50ceef227d0caca52acd03e346e00);
+            
+        
+
+        marker_bea980028943f59f6a91973aacfa8d91.bindPopup(popup_bc4a76add6f28dcb4e91ca3cf142fb7f)
+        ;
+
+        
+    
+    
+            marker_bea980028943f59f6a91973aacfa8d91.bindTooltip(
+                `<div>
+                     Müze Gazhane
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bea980028943f59f6a91973aacfa8d91.setIcon(icon_cd0fe78dd4fc4443976cb940e590a6ef);
+            
+    
+            var marker_ff5c49d9c8f09dd77a5fde9cdd2ef41a = L.marker(
+                [40.9909803, 29.0242398],
+                {
+}
+            ).addTo(map_65480b56472c183cda7d1ba90a96c392);
+        
+    
+            var icon_05e18d4af9cf8c5687de5be77163a98f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a5611670b893df32147b3ffd090eaa37 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4efea53d2bc346a80a7af80012981547 = $(`<div id="html_4efea53d2bc346a80a7af80012981547" style="width: 100.0%; height: 100.0%;"><b>AKO Adapazarı Islama Köfte</b><br>Restaurant</div>`)[0];
+                popup_a5611670b893df32147b3ffd090eaa37.setContent(html_4efea53d2bc346a80a7af80012981547);
+            
+        
+
+        marker_ff5c49d9c8f09dd77a5fde9cdd2ef41a.bindPopup(popup_a5611670b893df32147b3ffd090eaa37)
+        ;
+
+        
+    
+    
+            marker_ff5c49d9c8f09dd77a5fde9cdd2ef41a.bindTooltip(
+                `<div>
+                     AKO Adapazarı Islama Köfte
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ff5c49d9c8f09dd77a5fde9cdd2ef41a.setIcon(icon_05e18d4af9cf8c5687de5be77163a98f);
+            
+    
+            var marker_52ec0a3eb08db34db289bc0b76fc24a4 = L.marker(
+                [40.9908382, 29.0245505],
+                {
+}
+            ).addTo(map_65480b56472c183cda7d1ba90a96c392);
+        
+    
+            var icon_ce4dec0e07d9b4a7258b303823419ecb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b0cacdc6affefa8a62e2e0d6b60ffb50 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_00528ede4bd4cf1a30618acb1f2dcff5 = $(`<div id="html_00528ede4bd4cf1a30618acb1f2dcff5" style="width: 100.0%; height: 100.0%;"><b>Mercan Kokorec</b><br>Restaurant</div>`)[0];
+                popup_b0cacdc6affefa8a62e2e0d6b60ffb50.setContent(html_00528ede4bd4cf1a30618acb1f2dcff5);
+            
+        
+
+        marker_52ec0a3eb08db34db289bc0b76fc24a4.bindPopup(popup_b0cacdc6affefa8a62e2e0d6b60ffb50)
+        ;
+
+        
+    
+    
+            marker_52ec0a3eb08db34db289bc0b76fc24a4.bindTooltip(
+                `<div>
+                     Mercan Kokorec
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_52ec0a3eb08db34db289bc0b76fc24a4.setIcon(icon_ce4dec0e07d9b4a7258b303823419ecb);
+            
+    
+            var marker_5f0aca5f6df75fffda28e3d27e728352 = L.marker(
+                [40.9912711, 29.0239346],
+                {
+}
+            ).addTo(map_65480b56472c183cda7d1ba90a96c392);
+        
+    
+            var icon_8aa7e3e2ecc219997203a9eb815da484 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_edabeb76ec04766f4dbc09101c793066 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7ab41fad5044d80c58dc5922982f079a = $(`<div id="html_7ab41fad5044d80c58dc5922982f079a" style="width: 100.0%; height: 100.0%;"><b>HD İskender</b><br>Restaurant</div>`)[0];
+                popup_edabeb76ec04766f4dbc09101c793066.setContent(html_7ab41fad5044d80c58dc5922982f079a);
+            
+        
+
+        marker_5f0aca5f6df75fffda28e3d27e728352.bindPopup(popup_edabeb76ec04766f4dbc09101c793066)
+        ;
+
+        
+    
+    
+            marker_5f0aca5f6df75fffda28e3d27e728352.bindTooltip(
+                `<div>
+                     HD İskender
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5f0aca5f6df75fffda28e3d27e728352.setIcon(icon_8aa7e3e2ecc219997203a9eb815da484);
+            
+    
+            var marker_86050aa0d308c9c0be40d9b2a316de90 = L.marker(
+                [40.9909738, 29.0251074],
+                {
+}
+            ).addTo(map_65480b56472c183cda7d1ba90a96c392);
+        
+    
+            var icon_fed4cdb8152df8e9c853d395237e36ae = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_460f18109700374b9f0863489aab04ba = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_250837b74ffc8001654b9a904b4b4aec = $(`<div id="html_250837b74ffc8001654b9a904b4b4aec" style="width: 100.0%; height: 100.0%;"><b>Akveren Makarna</b><br>Restaurant</div>`)[0];
+                popup_460f18109700374b9f0863489aab04ba.setContent(html_250837b74ffc8001654b9a904b4b4aec);
+            
+        
+
+        marker_86050aa0d308c9c0be40d9b2a316de90.bindPopup(popup_460f18109700374b9f0863489aab04ba)
+        ;
+
+        
+    
+    
+            marker_86050aa0d308c9c0be40d9b2a316de90.bindTooltip(
+                `<div>
+                     Akveren Makarna
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_86050aa0d308c9c0be40d9b2a316de90.setIcon(icon_fed4cdb8152df8e9c853d395237e36ae);
+            
+    
+            var marker_c9e6fbddcce8382461be9a43f6c032e9 = L.marker(
+                [40.9911042, 29.023952],
+                {
+}
+            ).addTo(map_65480b56472c183cda7d1ba90a96c392);
+        
+    
+            var icon_8e95ebee29277833acce17955ac149cf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_538ed67ab62645602b2c8e19b0c08ba8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5739088833582f94688a0e0bcde2423f = $(`<div id="html_5739088833582f94688a0e0bcde2423f" style="width: 100.0%; height: 100.0%;"><b>Chicken Last Stop</b><br>Restaurant</div>`)[0];
+                popup_538ed67ab62645602b2c8e19b0c08ba8.setContent(html_5739088833582f94688a0e0bcde2423f);
+            
+        
+
+        marker_c9e6fbddcce8382461be9a43f6c032e9.bindPopup(popup_538ed67ab62645602b2c8e19b0c08ba8)
+        ;
+
+        
+    
+    
+            marker_c9e6fbddcce8382461be9a43f6c032e9.bindTooltip(
+                `<div>
+                     Chicken Last Stop
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c9e6fbddcce8382461be9a43f6c032e9.setIcon(icon_8e95ebee29277833acce17955ac149cf);
+            
+</script>
+</html>
