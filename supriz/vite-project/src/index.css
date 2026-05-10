@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300;1,9..40,400&display=swap');
+
+:root {
+  --ivory-white: #FAFAF8;
+  --warm-charcoal: #2C2C2C;
+  --blush-accent: #E8C4B8;
+  --warm-white: #FFFEF9;
+  --paper-white: #FFFFFF;
+  --warm-gray: #E5E5E5;
+  --text-gray: #666666;
+  
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--ivory-white);
+  color: var(--warm-charcoal);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Background Noise */
+.bg-noise {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.4;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.1'/%3E%3C/svg%3E");
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: var(--font-heading);
+  font-weight: 300;
+}
+
+.font-sans {
+  font-family: var(--font-body);
+}
+
+/* Utilities */
+.section-padding {
+  padding: 8rem 2rem;
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-message {
+  font-size: 3.5rem;
+  font-style: italic;
+  font-weight: 300;
+  max-width: 800px;
+  line-height: 1.2;
+  margin-bottom: 3rem;
+  color: var(--warm-charcoal);
+}
+
+.pulse-heart {
+  color: var(--blush-accent);
+  animation: gentlePulse 3s infinite ease-in-out;
+}
+
+@keyframes gentlePulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+/* Timeline */
+.timeline-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  padding: 4rem 0;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0; bottom: 0; left: 50%;
+  width: 1px;
+  background-color: var(--warm-gray);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 6rem;
+  width: 100%;
+}
+
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-content {
+  width: 45%;
+  background: var(--paper-white);
+  border: 1px solid var(--warm-gray);
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+}
+
+.timeline-content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+}
+
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--blush-accent);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.timeline-photo {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  background-color: #f5f5f5; /* placeholder */
+}
+
+.timeline-date {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--text-gray);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--warm-charcoal);
+  font-weight: 300;
+}
+
+/* Counter */
+.counter-section {
+  padding: 6rem 2rem;
+  position: relative;
+  text-align: center;
+}
+
+.counter-section::before, .counter-section::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 1px;
+  background-color: var(--warm-gray);
+}
+
+.counter-section::before { top: 0; }
+.counter-section::after { bottom: 0; }
+
+.counter-title {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--text-gray);
+  margin-bottom: 3rem;
+}
+
+.counter-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.counter-box {
+  background: var(--paper-white);
+  padding: 2rem;
+  min-width: 140px;
+  border: 1px solid var(--warm-gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter-num {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  color: var(--warm-charcoal);
+  animation: softFade 1s infinite alternate;
+}
+
+@keyframes softFade {
+  from { opacity: 0.8; }
+  to { opacity: 1; }
+}
+
+.counter-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-gray);
+  font-weight: 400;
+}
+
+/* Love Letter */
+.letter-section {
+  padding: 10rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.letter-card {
+  max-width: 600px;
+  background-color: var(--warm-white);
+  padding: 4rem;
+  border: 1px solid rgba(0,0,0,0.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.01);
+  text-align: center;
+}
+
+.letter-separator {
+  color: var(--blush-accent);
+  margin-bottom: 3rem;
+  font-size: 1.5rem;
+}
+
+.letter-text {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.4rem;
+  line-height: 2.2;
+  color: var(--warm-charcoal);
+  text-align: left;
+}
+
+.word-wrap {
+  display: inline-block;
+  overflow: hidden;
+  margin-right: 0.25em; /* space between words */
+}
+
+.letter-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.letter-word.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  border-top: 1px solid var(--blush-accent);
+  background: var(--paper-white);
+}
+
+.footer-content {
+  font-family: var(--font-heading);
+  color: var(--text-gray);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.footer-heart {
+  color: var(--blush-accent);
+}
+
+@media (max-width: 768px) {
+  .hero-message { font-size: 2.5rem; }
+  .timeline-line { left: 20px; }
+  .timeline-item { flex-direction: column !important; align-items: flex-start; padding-left: 50px; position: relative; }
+  .timeline-content { width: 100%; }
+  .timeline-dot { left: 20px; }
+  .counter-box { min-width: 110px; padding: 1.5rem; }
+  .counter-num { font-size: 3rem; }
+  .letter-card { padding: 2rem; }
+}
+
+/* Reasons Grid */
+.reasons-section {
+  padding: 8rem 2rem;
+  background-color: var(--paper-white); 
+  text-align: center;
+}
+
+.reasons-title {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 2.5rem;
+  color: var(--warm-charcoal);
+  margin-bottom: 4rem;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.reason-card {
+  perspective: 1000px;
+  height: 200px;
+  cursor: pointer;
+}
+
+.reason-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.reason-card:hover .reason-card-inner {
+  transform: rotateY(180deg);
+}
+
+.reason-card-front, .reason-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border: 1px solid var(--warm-gray);
+  background: var(--ivory-white);
+}
+
+.reason-card-front {
+  color: var(--warm-charcoal);
+}
+
+.reason-card-back {
+  background: var(--warm-white);
+  color: var(--warm-charcoal);
+  transform: rotateY(180deg);
+  border-color: var(--blush-accent);
+}
+
+.reason-number {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--text-gray);
+  margin-bottom: 0.5rem;
+}
+
+.reason-front-text {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-gray);
+}
+
+.reason-back-text {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  line-height: 1.5;
+  font-style: italic;
+}
