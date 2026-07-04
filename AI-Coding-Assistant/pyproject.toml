@@ -1,0 +1,20 @@
+[project]
+name = "ai-assistant"
+version = "0.1.0"
+description = "Terminal tabanlı AI Coding Assistant (OpenAI destekli)"
+requires-python = ">=3.9"
+dependencies = [
+    "openai>=1.40.0",
+    "python-dotenv>=1.0.0",
+    "rich>=13.7.0",
+]
+
+[project.scripts]
+aiassistant = "ai_assistant.cli:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["ai_assistant*"]
